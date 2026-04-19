@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha - 3D Printer Engineering</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #ff8c00; --accent-secondary: #ffd700; --code-bg: #000; }
+        body { 
+            background-color: var(--bg); color: #ccc; 
+            font-family: 'Inter', sans-serif; line-height: 1.6; padding: 20px;
+        }
+        .container { max-width: 900px; background: var(--card-bg); padding: 40px; border-radius: 8px; border: 1px solid #222; }
+        .header-mini { border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
+        .status { font-size: 0.6rem; color: var(--accent); font-weight: 700; text-transform: uppercase; border: 1px solid var(--accent); padding: 2px 8px; border-radius: 3px; letter-spacing: 1px; }
+        
+        h1 { color: #fff; font-weight: 900; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { color: var(--accent); font-size: 1.1rem; text-transform: uppercase; margin-top: 35px; font-weight: 800; letter-spacing: 1px; border-left: 3px solid var(--accent-secondary); padding-left: 15px; }
+        h3 { color: #fff; font-size: 1rem; margin-top: 20px; font-weight: 700; }
+
+        .content-block { background: #0f0f0f; border: 1px solid #222; padding: 20px; border-radius: 6px; margin-bottom: 20px; }
+        .tech-tag { font-size: 0.65rem; background: #1a1a1a; padding: 3px 8px; border-radius: 4px; border: 1px solid #333; color: var(--accent); font-weight: bold; margin-bottom: 10px; display: inline-block; }
+        
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        strong { color: #fff; }
+        
+        .back-btn { color: #555; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; transition: 0.2s; }
+        .back-btn:hover { color: var(--accent); }
+        .footer-note { font-size: 0.7rem; color: #444; text-align: center; margin-top: 40px; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-mini">
+        <a href="index.html" class="back-btn">← Retour Index</a>
+        <span class="status">Module: FDM_Builder_v1.0</span>
+    </div>
+
+    <h1>🏗️ Construire une imprimante 3D de A à Z</h1>
+    <p>Construire une imprimante 3D à partir de zéro est un projet très enrichissant, nécessitant des connaissances en électronique, mécanique, programmation et modélisation 3D. Ce guide se concentre sur le type <strong>FDM (Fused Deposition Modeling)</strong>.</p>
+
+    <h2>1. Les composants principaux</h2>
+    <div class="content-block">
+        <h3>Composants mécaniques</h3>
+        <ul>
+            <li><strong>Cadre :</strong> Structure porteuse en aluminium ou acier.</li>
+            <li><strong>Moteurs pas à pas :</strong> Précision des déplacements des axes X, Y et Z.</li>
+            <li><strong>Rails et glissières :</strong> Fluidité du mouvement de la tête et du lit.</li>
+            <li><strong>Vis sans fin et courroies :</strong> Entraînement des axes.</li>
+            <li><strong>Plateau chauffant (bed) :</strong> Aide l'adhésion des premières couches.</li>
+            <li><strong>Tête d'impression (extrudeuse) :</strong> Chauffe et extrude le filament plastique.</li>
+            <li><strong>Capteurs de fin de course :</strong> Limiteurs physiques pour les moteurs.</li>
+            <li><strong>Ventilateurs :</strong> Refroidissement du filament post-extrusion.</li>
+        </ul>
+
+        <h3>Composants électroniques</h3>
+        <ul>
+            <li><strong>Carte mère :</strong> Cerveau gérant les moteurs, capteurs et chauffages.</li>
+            <li><strong>Contrôleurs de moteurs :</strong> Circuits dédiés au pilotage des moteurs pas à pas.</li>
+            <li><strong>Écran de contrôle :</strong> Interface utilisateur (LCD).</li>
+            <li><strong>Alimentation :</strong> Fournit l'énergie pour le lit, l'extrudeuse et les moteurs.</li>
+        </ul>
+    </div>
+
+    
+
+    <h2>2. Planification et Conception</h2>
+    <div class="content-block">
+        <h3>Étape 1 : Choisir un modèle</h3>
+        <p>Les modèles les plus courants sont de type <strong>Cartésien</strong> (axes perpendiculaires) ou <strong>Delta</strong> (trois bras articulés).</p>
+        
+        <h3>Étape 2 : Dessiner les plans ou acheter un kit</h3>
+        <p>Utilisez des logiciels comme <strong>Fusion 360</strong> ou <strong>FreeCAD</strong>, ou basez-vous sur des projets open-source comme <strong>Prusa i3</strong> ou <strong>RepRap</strong>. Les kits simplifient l'approche pour les débutants.</p>
+    </div>
+
+    <h2>3. Assemblage de l'imprimante</h2>
+    <div class="content-block">
+        <h3>Étape 1 : Assembler le cadre</h3>
+        <p>Le cadre doit être parfaitement d'équerre et rigide. Utilisez des profilés aluminium pour garantir la stabilité.</p>
+
+        <h3>Étape 2 : Installer les moteurs et les rails</h3>
+        <p>Fixez les moteurs et les rails. Utilisez des roulements pour assurer un mouvement sans friction.</p>
+
+        <h3>Étape 3 : Installer le plateau chauffant</h3>
+        <p>Montez-le sur l'axe Y en vérifiant sa stabilité avant connexion à la carte mère.</p>
+
+        <h3>Étape 4 : Installer l’extrudeuse</h3>
+        <p>Fixez la tête d'impression sur l'axe X. Montez les ventilateurs pour réguler la température du filament.</p>
+    </div>
+
+    <h2>4. Installation de l'électronique</h2>
+    <div class="content-block">
+        <p>Connectez tous les périphériques à la <strong>carte mère</strong> : moteurs, thermistances (capteurs de température), éléments chauffants et écran LCD. Vérifiez que l'alimentation est dimensionnée pour la consommation du lit chauffant.</p>
+    </div>
+
+    
+
+    <h2>5. Calibration et Test</h2>
+    <div class="content-block">
+        <ul>
+            <li><strong>Nivellement du plateau :</strong> Distance précise entre la buse et le lit.</li>
+            <li><strong>Test des axes :</strong> Vérification du sens de rotation et des butées.</li>
+            <li><strong>Calibration thermique :</strong> Stabilisation des températures cibles.</li>
+            <li><strong>Impression de test :</strong> Lancement d'un cube de calibration simple.</li>
+        </ul>
+    </div>
+
+    <h2>6. Utilisation</h2>
+    <p>Une fois calibrée, utilisez des logiciels de <strong>Slicing (découpe)</strong> comme <strong>Cura</strong> ou <strong>PrusaSlicer</strong> pour générer le G-Code nécessaire à l'impression de vos modèles 3D.</p>
+
+    <h2 style="border-left: 3px solid #fff;">Conclusion</h2>
+    <p>Construire son imprimante permet de maîtriser chaque aspect de la technologie. Commencer par un kit est recommandé pour apprendre les bases avant de concevoir ses propres modifications mécaniques ou électroniques. 🎯</p>
+
+    <div class="footer-note">
+        ALPHA_ARCHIVE // SECTION_3D_PRINTING // 2026
+    </div>
+</div>
+
+</body>
+</html>

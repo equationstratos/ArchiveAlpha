@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha - PLA Synthesis & Filament Production</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #8bc34a; --accent-secondary: #558b2f; --code-bg: #000; }
+        body { 
+            background-color: var(--bg); color: #ccc; 
+            font-family: 'Inter', sans-serif; line-height: 1.6; padding: 20px;
+        }
+        .container { max-width: 900px; background: var(--card-bg); padding: 40px; border-radius: 8px; border: 1px solid #222; }
+        .header-mini { border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
+        .status { font-size: 0.6rem; color: var(--accent); font-weight: 700; text-transform: uppercase; border: 1px solid var(--accent); padding: 2px 8px; border-radius: 3px; letter-spacing: 1px; }
+        
+        h1 { color: #fff; font-weight: 900; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { color: var(--accent); font-size: 1.1rem; text-transform: uppercase; margin-top: 35px; font-weight: 800; letter-spacing: 1px; border-left: 3px solid var(--accent-secondary); padding-left: 15px; }
+        h3 { color: #fff; font-size: 1rem; margin-top: 20px; font-weight: 700; }
+
+        .content-block { background: #0f0f0f; border: 1px solid #222; padding: 20px; border-radius: 6px; margin-bottom: 20px; }
+        .chem-tag { font-size: 0.65rem; background: #1a1a1a; padding: 3px 8px; border-radius: 4px; border: 1px solid #333; color: var(--accent); font-weight: bold; margin-bottom: 10px; display: inline-block; }
+        
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        strong { color: #fff; }
+        
+        .back-btn { color: #555; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; transition: 0.2s; }
+        .back-btn:hover { color: var(--accent); }
+        .footer-note { font-size: 0.7rem; color: #444; text-align: center; margin-top: 40px; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-mini">
+        <a href="index.html" class="back-btn">← Retour Index</a>
+        <span class="status">Protocol: Bio_Polymer_Synthesis_v1.0</span>
+    </div>
+
+    <h1>🌱 Créer son propre PLA (Polylactic Acid)</h1>
+    <p>Créer son propre PLA, un filament utilisé dans l'impression 3D, est un processus complexe qui nécessite une bonne connaissance de la chimie, ainsi que l'accès à certains équipements et matières premières. Le PLA est un plastique biodégradable fabriqué à partir de ressources renouvelables (maïs, canne à sucre).</p>
+
+    <h2>1. Comprendre la chimie du PLA</h2>
+    <div class="content-block">
+        <p>Le PLA est un polymère thermoplastique produit par la polymérisation de l'acide lactique. Ce processus peut être réalisé de deux façons :</p>
+        <ul>
+            <li><strong>Polymérisation par condensation :</strong> Le plus courant dans la fabrication industrielle.</li>
+            <li><strong>Polymérisation par ouverture de cycle :</strong> Utilisée pour des qualités spécifiques (alimentaire).</li>
+        </ul>
+        <p>Le dextrose (glucose) extrait des végétaux est transformé en acide lactique via un processus biochimique.</p>
+    </div>
+
+    <h2>2. Les étapes de fabrication du polymère</h2>
+    
+    <div class="content-block">
+        <span class="chem-tag">ÉTAPE 1 : EXTRACTION DU DEXTROSE</span>
+        <p>Cela implique de moudre la matière première et d'hydrolyser l'amidon pour extraire le glucose à l'aide d'acides ou d'enzymes.</p>
+
+        <span class="chem-tag">ÉTAPE 2 : FERMENTATION</span>
+        <p>Le glucose est transformé en acide lactique à l'aide de bactéries spécifiques (type <em>Lactobacillus</em>) dans des conditions contrôlées.</p>
+
+        <span class="chem-tag">ÉTAPE 3 : PURIFICATION</span>
+        <p>Distillation et cristallisation pour obtenir un acide lactique pur à 85–90%.</p>
+
+        <span class="chem-tag">ÉTAPE 4 : POLYMÉRISATION</span>
+        <ul>
+            <li><strong>Par condensation :</strong> Chauffage sous pression pour éliminer l'eau et former des chaînes polymères.</li>
+            <li><strong>Par ouverture de cycle :</strong> Utilisation d'un catalyseur pour ouvrir la structure et former les chaînes de PLA.</li>
+        </ul>
+
+        <span class="chem-tag">ÉTAPE 5 : GRANULATION</span>
+        <p>Le PLA polymérisé est refroidi et transformé en granulés (billes) prêts pour l'extrusion.</p>
+    </div>
+
+    <h2>3. Fabrication du filament 3D</h2>
+    <div class="content-block">
+        <h3>Préparation de l'extrudeuse</h3>
+        <p>Une extrudeuse (souvent à vis) chauffe et presse les granulés de PLA pour les mettre en forme.</p>
+        
+        <h3>Processus d'extrusion</h3>
+        <ul>
+            <li>Le PLA est chauffé entre <strong>180°C et 220°C</strong> pour devenir liquide.</li>
+            <li>Le plastique est poussé à travers une buse, puis refroidi et étiré pour atteindre un diamètre précis (1.75 mm ou 2.85 mm).</li>
+            <li>Le filament est enroulé sur des bobines de manière régulière et homogène.</li>
+        </ul>
+    </div>
+
+    <h2>4. Tests et Personnalisation</h2>
+    <div class="content-block">
+        <ul>
+            <li><strong>Contrôle qualité :</strong> Vérification de l'uniformité du diamètre (pied à coulisse) et tests d'impression pour valider la fusion et l'adhésion.</li>
+            <li><strong>Colorants :</strong> Ajout de pigments lors de l'extrusion pour des couleurs personnalisées.</li>
+            <li><strong>Renforcements :</strong> Intégration de charges (carbone, bois, fibres de verre) pour modifier les propriétés mécaniques et la texture.</li>
+        </ul>
+    </div>
+
+    <h2 style="border-left: 3px solid #fff;">Conclusion</h2>
+    <p>Fabriquer son propre PLA est un défi excitant pour les passionnés de chimie. Bien que complexe, ce processus permet d'expérimenter des filaments sur mesure adaptés à des besoins spécifiques en impression 3D. 🎯</p>
+
+    <div class="footer-note">
+        ALPHA_ARCHIVE // SECTION_MATERIALS_SCIENCE // 2026
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive Alpha - 3D Printing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #ff8c00; } /* Orange industriel */
+        body { 
+            background-color: var(--bg); color: #e0e0e0; 
+            font-family: 'Inter', sans-serif; overflow: hidden;
+            height: 100vh; display: flex; flex-direction: column;
+        }
+        
+        .header { padding: 10px 20px; border-bottom: 1px solid #222; background: #0f0f0f; }
+        .back-btn { color: #555; text-decoration: none; font-size: 0.8rem; font-weight: 700; transition: 0.2s; }
+        .back-btn:hover { color: var(--accent); }
+        
+        .search-bar { 
+            background: #1a1a1a; border: 1px solid #333; color: white; 
+            border-radius: 6px; padding: 6px 15px; width: 250px; outline: none; font-size: 0.8rem;
+        }
+        .nav-pills { padding: 10px; background: #0f0f0f; border-bottom: 1px solid #222; justify-content: center; }
+        .nav-link { 
+            color: #666 !important; text-transform: uppercase; font-size: 0.65rem; 
+            font-weight: 700; letter-spacing: 1px; padding: 8px 12px !important;
+            transition: all 0.2s; border-radius: 4px !important;
+        }
+        .nav-link.active { background-color: var(--accent) !important; color: white !important; }
+        .nav-link:hover:not(.active) { color: #aaa !important; background: #1a1a1a; }
+        
+        .tab-content { flex-grow: 1; padding: 20px; overflow-y: auto; }
+        
+        .card { 
+            background-color: var(--card-bg) !important; border: 1px solid #222 !important;
+            transition: all 0.1s ease; min-height: 80px; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            border-radius: 6px; padding: 5px !important;
+        }
+        .card:hover { transform: scale(1.03); border-color: #444 !important; background: #1c1c1c !important; }
+        
+        .title { 
+            font-size: 0.6rem; font-weight: 700; margin-top: 6px; 
+            text-transform: uppercase; color: #888; text-align: center;
+        }
+        .emoji-box { font-size: 1.2rem; }
+        a { text-decoration: none !important; }
+        .d-none-search { display: none !important; }
+    </style>
+</head>
+<body>
+
+<div class="header d-flex justify-content-between align-items-center">
+    <a href="../index.html" class="back-btn">← PORTAIL_PRINCIPAL</a>
+    <div style="font-weight: 900; letter-spacing: 2px; font-size: 0.8rem; color: #444;">CORE_3D_PRINTING</div>
+    <input type="text" id="searchInput" class="search-bar" placeholder="Rechercher module/matériau..." autocomplete="off" />
+</div>
+
+<ul class="nav nav-pills" id="pills-tab" role="tablist">
+    <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#machines">Hardware & Tech</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#software">Slicing & Design</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#materials">Filaments</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#materials">Resines</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#maintenance">Maintenance & Ops</button></li>
+</ul>
+
+<div class="tab-content" id="pills-tabContent">
+    
+    <div class="tab-pane fade show active" id="machines">
+        <div class="row g-2">
+            <div class="col-3 col-md-2 col-lg-1"><a href="./fdm-printers.html"><div class="card card-body"><span class="emoji-box">🏗️</span><h6 class="title">FDM Tech</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./resin_printers.html"><div class="card card-body"><span class="emoji-box">🧪</span><h6 class="title">SLA / Resin</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./electronics.html"><div class="card card-body"><span class="emoji-box">🔌</span><h6 class="title">Mainboards</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./hotends.html"><div class="card card-body"><span class="emoji-box">🔥</span><h6 class="title">Hotends</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./firmware.html"><div class="card card-body"><span class="emoji-box">⚙️</span><h6 class="title">Marlin/Klipper</h6></div></a></div>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="software">
+        <div class="row g-2">
+            <div class="col-3 col-md-2 col-lg-1"><a href="./slicing_basics.html"><div class="card card-body"><span class="emoji-box">🍰</span><h6 class="title">Slicing</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./cad_modeling.html"><div class="card card-body"><span class="emoji-box">📐</span><h6 class="title">CAD Design</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./gcode_lib.html"><div class="card card-body"><span class="emoji-box">📜</span><h6 class="title">G-Code</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./scanning.html"><div class="card card-body"><span class="emoji-box">📸</span><h6 class="title">3D Scanning</h6></div></a></div>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="materials">
+        <div class="row g-2">
+            <div class="col-3 col-md-2 col-lg-1"><a href="./pla.html"><div class="card card-body"><span class="emoji-box">🧵</span><h6 class="title">PLA</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./petg.html"><div class="card card-body"><span class="emoji-box">🧵</span><h6 class="title">PETG</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./resins.html"><div class="card card-body"><span class="emoji-box">💧</span><h6 class="title">Resins</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./special_tech.html"><div class="card card-body"><span class="emoji-box">💎</span><h6 class="title">Technical</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./post_process.html"><div class="card card-body"><span class="emoji-box">✨</span><h6 class="title">Finishing</h6></div></a></div>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="maintenance">
+        <div class="row g-2">
+            <div class="col-3 col-md-2 col-lg-1"><a href="./calibration.html"><div class="card card-body"><span class="emoji-box">📏</span><h6 class="title">Calibration</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./troubleshooting.html"><div class="card card-body"><span class="emoji-box">🛠️</span><h6 class="title">Fixes</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./safety.html"><div class="card card-body"><span class="emoji-box">⚠️</span><h6 class="title">Safety</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./upgrades.html"><div class="card card-body"><span class="emoji-box">🚀</span><h6 class="title">Upgrades</h6></div></a></div>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.getElementById('searchInput').addEventListener('input', function() {
+        let filter = this.value.toLowerCase();
+        let cards = document.querySelectorAll('.card');
+        let tabs = document.querySelectorAll('.tab-pane');
+        let navPills = document.querySelector('.nav-pills');
+        
+        if (filter.length > 0) {
+            tabs.forEach(t => { t.classList.add('show', 'active'); });
+            navPills.style.display = 'none';
+        } else {
+            tabs.forEach((t, i) => { 
+                 t.classList.remove('show', 'active'); 
+                 if(i === 0) t.classList.add('show', 'active');
+            });
+            navPills.style.display = 'flex';
+        }
+        
+        cards.forEach(card => {
+            let title = card.querySelector('.title').innerText.toLowerCase();
+            let parent = card.closest('[class^="col"]');
+            if (title.includes(filter)) {
+                parent.classList.remove('d-none-search');
+            } else {
+                parent.classList.add('d-none-search');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

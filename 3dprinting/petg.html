@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha - PET Recycling & Material Transformation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #00d4ff; --accent-secondary: #008ba3; --code-bg: #000; }
+        body { 
+            background-color: var(--bg); color: #ccc; 
+            font-family: 'Inter', sans-serif; line-height: 1.6; padding: 20px;
+        }
+        .container { max-width: 900px; background: var(--card-bg); padding: 40px; border-radius: 8px; border: 1px solid #222; }
+        .header-mini { border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
+        .status { font-size: 0.6rem; color: var(--accent); font-weight: 700; text-transform: uppercase; border: 1px solid var(--accent); padding: 2px 8px; border-radius: 3px; letter-spacing: 1px; }
+        
+        h1 { color: #fff; font-weight: 900; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { color: var(--accent); font-size: 1.1rem; text-transform: uppercase; margin-top: 35px; font-weight: 800; letter-spacing: 1px; border-left: 3px solid var(--accent-secondary); padding-left: 15px; }
+        h3 { color: #fff; font-size: 1rem; margin-top: 20px; font-weight: 700; }
+
+        .content-block { background: #0f0f0f; border: 1px solid #222; padding: 20px; border-radius: 6px; margin-bottom: 20px; }
+        .recycle-tag { font-size: 0.65rem; background: #1a1a1a; padding: 3px 8px; border-radius: 4px; border: 1px solid #333; color: var(--accent); font-weight: bold; margin-bottom: 10px; display: inline-block; }
+        
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        strong { color: #fff; }
+        
+        .back-btn { color: #555; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; transition: 0.2s; }
+        .back-btn:hover { color: var(--accent); }
+        .footer-note { font-size: 0.7rem; color: #444; text-align: center; margin-top: 40px; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-mini">
+        <a href="index.html" class="back-btn">← Retour Index</a>
+        <span class="status">Protocol: Polymer_Recovery_v1.0</span>
+    </div>
+
+    <h1>♻️ Fabriquer du PET à partir de bouteilles recyclées</h1>
+    <p>Fabriquer du PET (polyéthylène téréphtalate) à partir de bouteilles recyclées est un processus complexe qui nécessite des équipements et des connaissances spécifiques en chimie et en ingénierie des matériaux. Cependant, il est possible de transformer le PET usagé en granulés ou en filament d'impression 3D.</p>
+
+    <h2>1. Collecte et préparation des bouteilles</h2>
+    <div class="content-block">
+        <h3>Étape 1 : Récupérer les bouteilles en PET</h3>
+        <p>Identifiez les contenants pour boissons. Le PET est identifiable par le <strong>code plastique n°1</strong> (triangle avec un 1 à l'intérieur).</p>
+        
+        <h3>Étape 2 : Nettoyage</h3>
+        <p>Il est crucial d'éliminer les impuretés (étiquettes, colles, résidus de boisson) :</p>
+        <ul>
+            <li>Retirer les bouchons et les étiquettes.</li>
+            <li>Laver à l'eau chaude et laisser sécher complètement.</li>
+        </ul>
+    </div>
+
+    <h2>2. Découpe et broyage</h2>
+    <div class="content-block">
+        <span class="recycle-tag">DÉCOUPE</span>
+        <p>Les bouteilles doivent être découpées en morceaux uniformes d’environ 2 à 3 cm de long pour maximiser l'efficacité du broyage.</p>
+
+        <span class="recycle-tag">BROYAGE</span>
+        <p>Les morceaux sont réduits en <strong>flakes</strong> (paillettes ou copeaux) à l'aide d'une broyeuse ou d'un moulin à plastique. Un nettoyage supplémentaire après broyage peut être nécessaire pour enlever les poussières résiduelles.</p>
+    </div>
+
+    
+
+    <h2>3. Fusion et extrusion</h2>
+    <div class="content-block">
+        <h3>Étape 1 : Fusion du PET</h3>
+        <p>Le PET broyé doit être chauffé entre <strong>250°C et 270°C</strong>. Le contrôle thermique est critique pour éviter la dégradation chimique du plastique.</p>
+
+        <h3>Étape 2 : Extrusion en granulés</h3>
+        <p>Une extrudeuse pousse le plastique fondu à travers une filière. Le plastique est ensuite refroidi et découpé en granulés uniformes utilisables pour l'injection ou l'impression 3D.</p>
+
+        <h3>Étape 3 : Fabrication de filament 3D (facultatif)</h3>
+        <p>Pour créer du filament (1,75 mm ou 2,85 mm), les granulés passent dans un extrudeur de filament spécifique garantissant un diamètre constant pour les imprimantes 3D compatibles.</p>
+    </div>
+
+    <h2>4. Utilisations du PET recyclé</h2>
+    <div class="content-block">
+        <p>Le PET recyclé peut être transformé via différents processus :</p>
+        <ul>
+            <li><strong>Fibres textiles :</strong> Fabrication de polyester pour les vêtements.</li>
+            <li><strong>Films plastiques et contenants.</strong></li>
+            <li><strong>Injection plastique et moulage par soufflage.</strong></li>
+            <li><strong>Fabrication additive (Impression 3D).</strong></li>
+        </ul>
+    </div>
+
+    
+
+    <h2>5. Défis techniques</h2>
+    <div class="content-block">
+        <p>Le PET recyclé a tendance à être de <strong>qualité inférieure</strong> au PET vierge. Pour des produits de haute qualité, il est souvent nécessaire de mélanger les deux types. La gestion précise de la température lors de la fusion est l'enjeu majeur pour assurer la résistance mécanique du matériau final.</p>
+    </div>
+
+    <h2 style="border-left: 3px solid #fff;">Conclusion</h2>
+    <p>Le recyclage du PET est un excellent moyen de revaloriser les déchets plastiques. Bien que cela demande des équipements industriels ou spécialisés (extrudeuse), c'est un processus clé de l'économie circulaire et de la fabrication autonome. 🌍✨</p>
+
+    <div class="footer-note">
+        ALPHA_ARCHIVE // SECTION_MATERIALS_RECOVERY // 2026
+    </div>
+</div>
+
+</body>
+</html>

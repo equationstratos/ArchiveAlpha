@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha - Python Programming Full Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #ffd43b; --accent-secondary: #306998; --code-bg: #000; }
+        body { 
+            background-color: var(--bg); color: #ccc; 
+            font-family: 'Inter', sans-serif; line-height: 1.6; padding: 20px;
+        }
+        .container { max-width: 900px; background: var(--card-bg); padding: 40px; border-radius: 8px; border: 1px solid #222; }
+        .header-mini { border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
+        .status { font-size: 0.6rem; color: var(--accent); font-weight: 700; text-transform: uppercase; border: 1px solid var(--accent); padding: 2px 8px; border-radius: 3px; letter-spacing: 1px; }
+        
+        h1 { color: #fff; font-weight: 900; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { color: var(--accent); font-size: 1.1rem; text-transform: uppercase; margin-top: 35px; font-weight: 800; letter-spacing: 1px; border-left: 3px solid var(--accent-secondary); padding-left: 15px; }
+        h3 { color: #fff; font-size: 1rem; margin-top: 20px; font-weight: 700; }
+
+        .content-block { background: #0f0f0f; border: 1px solid #222; padding: 20px; border-radius: 6px; margin-bottom: 20px; }
+        .code-snippet { background: var(--code-bg); padding: 15px; border-radius: 4px; border-left: 3px solid var(--accent-secondary); font-family: 'Consolas', monospace; color: #e0e0e0; margin: 15px 0; font-size: 0.9rem; position: relative; white-space: pre-wrap; }
+        
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        strong { color: #fff; }
+        
+        .back-btn { color: #555; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+        .back-btn:hover { color: var(--accent); }
+        .footer-note { font-size: 0.7rem; color: #444; text-align: center; margin-top: 40px; text-transform: uppercase; }
+        .py-tag { font-size: 0.7rem; background: #1a1a1a; padding: 3px 8px; border-radius: 4px; border: 1px solid #333; color: var(--accent-secondary); font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-mini">
+        <a href="index.html" class="back-btn">← Retour Index</a>
+        <span class="status">Language: Python_Core_v3</span>
+    </div>
+
+    <h1>🐍 Comment coder en Python ?</h1>
+    <p>Le langage de programmation Python est l'un des langages les plus populaires grâce à sa simplicité, sa lisibilité et sa flexibilité. Si tu veux apprendre à coder en Python, voici une introduction pour bien commencer !</p>
+
+    <h2>1. Installer Python</h2>
+    <div class="content-block">
+        <p>Avant de commencer à coder en Python, tu dois l'installer sur ton ordinateur.</p>
+        <p><strong>Installation de Python :</strong></p>
+        <ul>
+            <li>Va sur le site officiel de Python : <strong>python.org</strong>.</li>
+            <li>Télécharge la version la plus récente (choisis la version qui correspond à ton système d’exploitation : Windows, macOS ou Linux).</li>
+            <li>Pendant l'installation, coche la case <strong>"Add Python to PATH"</strong> avant de cliquer sur "Install Now".</li>
+            <li>Une fois l’installation terminée, ouvre ton terminal ou ton invite de commande (CMD) et tape :</li>
+        </ul>
+        <div class="code-snippet">python --version</div>
+        <p>Cela te permettra de vérifier que Python est bien installé.</p>
+    </div>
+
+    <h2>2. Utiliser un éditeur de code</h2>
+    <div class="content-block">
+        <p>Pour écrire ton code Python, tu peux utiliser plusieurs éditeurs de texte ou environnements de développement. Voici quelques options populaires :</p>
+        <ul>
+            <li><strong>VS Code (Visual Studio Code) :</strong> Léger, puissant, avec de nombreuses extensions.</li>
+            <li><strong>PyCharm :</strong> Un IDE (environnement de développement intégré) spécialisé pour Python.</li>
+            <li><strong>Sublime Text :</strong> Un éditeur de texte simple et rapide.</li>
+            <li><strong>Jupyter Notebook :</strong> Très utilisé pour l’analyse de données et la science des données, mais aussi très pratique pour tester des bouts de code rapidement.</li>
+        </ul>
+    </div>
+
+    <h2>3. Écrire ton premier programme Python</h2>
+    <div class="content-block">
+        <p>Tu peux commencer par écrire un petit programme Python pour tester ton installation. Voici un exemple simple :</p>
+        <h3>Hello, World!</h3>
+        <div class="code-snippet">print("Hello, World!")</div>
+        <p><strong>Explication :</strong></p>
+        <ul>
+            <li><em>print()</em> est une fonction qui affiche du texte dans la console.</li>
+            <li>Le texte que tu veux afficher doit être entre guillemets (simples ou doubles).</li>
+        </ul>
+        <p><strong>Exécution :</strong></p>
+        <ol>
+            <li>Sauvegarde le fichier avec l'extension <strong>.py</strong> (par exemple, <em>hello.py</em>).</li>
+            <li>Dans ton terminal, va dans le dossier où tu as sauvegardé ton fichier et tape :</li>
+        </ol>
+        <div class="code-snippet">python hello.py</div>
+        <p>Tu devrais voir s'afficher : <strong>Hello, World!</strong>.</p>
+    </div>
+
+    <h2>4. Concepts de base en Python</h2>
+    <div class="content-block">
+        <h3>Variables et types de données :</h3>
+        <p>Python permet de travailler avec des variables pour stocker des données.</p>
+        <div class="code-snippet">x = 5  # Une variable entière
+y = "Python"  # Une chaîne de caractères
+z = 3.14  # Un nombre à virgule flottante (float)</div>
+        <p>Les types de base sont :</p>
+        <ul>
+            <li><strong>int :</strong> Entier (par exemple, 5, -3, 100)</li>
+            <li><strong>float :</strong> Nombre décimal (par exemple, 3.14, -2.5)</li>
+            <li><strong>str :</strong> Chaîne de caractères (par exemple, "Bonjour", 'Python')</li>
+            <li><strong>bool :</strong> Booléen (True ou False)</li>
+        </ul>
+
+        <h3>Opérations de base :</h3>
+        <p>Tu peux effectuer des calculs avec Python de manière simple.</p>
+        <div class="code-snippet">a = 10
+b = 5
+
+# Addition
+print(a + b)  # Affiche 15
+# Soustraction
+print(a - b)  # Affiche 5
+# Multiplication
+print(a * b)  # Affiche 50
+# Division
+print(a / b)  # Affiche 2.0</div>
+
+        <h3>Structures conditionnelles :</h3>
+        <p>Les conditions permettent d'exécuter du code selon certaines situations.</p>
+        <div class="code-snippet">x = 10
+if x > 5:
+    print("x est plus grand que 5")
+else:
+    print("x est inférieur ou égal à 5")</div>
+
+        <h3>Boucles :</h3>
+        <p>Les boucles permettent de répéter des actions plusieurs fois.</p>
+        <p><strong>Boucle for :</strong></p>
+        <div class="code-snippet">for i in range(5):
+    print(i)</div>
+        <p>Cela affichera les nombres de 0 à 4.</p>
+        
+        <p><strong>Boucle while :</strong></p>
+        <div class="code-snippet">count = 0
+while count < 5:
+    print(count)
+    count += 1</div>
+        <p>Cela affichera également les nombres de 0 à 4, mais en utilisant une condition.</p>
+    </div>
+
+    <h2>5. Fonctions en Python</h2>
+    <div class="content-block">
+        <p>Les fonctions sont des blocs de code qui peuvent être réutilisés.</p>
+        <div class="code-snippet">def dire_bonjour():
+    print("Bonjour!")
+
+dire_bonjour()  # Appel de la fonction</div>
+        <p>Les fonctions peuvent aussi accepter des paramètres et retourner des valeurs :</p>
+        <div class="code-snippet">def additionner(a, b):
+    return a + b
+
+resultat = additionner(5, 3)  # Résultat sera 8
+print(resultat)</div>
+    </div>
+
+    <h2>6. Listes et Dictionnaires</h2>
+    <div class="content-block">
+        <p><strong>Listes :</strong> Les listes sont des collections ordonnées d'éléments.</p>
+        <div class="code-snippet">fruits = ["pomme", "banane", "orange"]
+print(fruits[0])  # Affiche "pomme"</div>
+        
+        <p><strong>Dictionnaires :</strong> Les dictionnaires sont des collections non ordonnées de paires clé-valeur.</p>
+        <div class="code-snippet">personne = {
+    "nom": "Alice",
+    "age": 25
+}
+print(personne["nom"])  # Affiche "Alice"</div>
+    </div>
+
+    <h2>7. Gérer les erreurs :</h2>
+    <div class="content-block">
+        <p>Python a une gestion des erreurs (exceptions) qui te permet de capturer et de gérer des erreurs sans faire planter ton programme.</p>
+        <p><strong>Exemple :</strong></p>
+        <div class="code-snippet">try:
+    x = 10 / 0
+except ZeroDivisionError:
+    print("Impossible de diviser par zéro.")</div>
+    </div>
+
+    <h2>8. Projets pour débutants</h2>
+    <div class="content-block">
+        <p>Lorsque tu te sens à l'aise avec les bases, tu peux essayer des projets simples pour pratiquer davantage, tels que :</p>
+        <ul>
+            <li><strong>Calculatrice :</strong> Créer une calculatrice qui additionne, soustrait, multiplie et divise.</li>
+            <li><strong>Jeu du nombre mystère :</strong> L'ordinateur choisit un nombre aléatoire, et l'utilisateur doit deviner ce nombre.</li>
+            <li><strong>Conversion d'unités :</strong> Créer un programme pour convertir des unités de longueur (mètres en kilomètres, par exemple).</li>
+        </ul>
+    </div>
+
+    <h2>Ressources pour apprendre davantage :</h2>
+    <div class="content-block">
+        <ul>
+            <li>Documentation officielle Python : <a href="https://docs.python.org/" style="color:var(--accent);">https://docs.python.org/</a></li>
+            <li>CodeAcademy : Python Course</li>
+            <li>Le site du zéro (OpenClassrooms) : Apprendre Python</li>
+        </ul>
+    </div>
+
+    <h2 style="border-left: 3px solid #fff;">Conclusion :</h2>
+    <p>Coder en Python est accessible même aux débutants grâce à sa syntaxe simple et sa large communauté. Pratique en résolvant des petits exercices, et développe des projets personnels pour renforcer tes compétences. N'hésite pas à poser des questions si tu veux plus de détails ou d'exemples sur un sujet précis ! 😊</p>
+
+    <div class="footer-note">
+        ALPHA_ARCHIVE // SECTION_DEV // 2026
+    </div>
+</div>
+
+</body>
+</html>

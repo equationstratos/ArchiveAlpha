@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha - Electronic Component Manufacturing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #ffd700; --accent-secondary: #f39c12; --code-bg: #000; }
+        body { 
+            background-color: var(--bg); color: #ccc; 
+            font-family: 'Inter', sans-serif; line-height: 1.6; padding: 20px;
+        }
+        .container { max-width: 900px; background: var(--card-bg); padding: 40px; border-radius: 8px; border: 1px solid #222; }
+        .header-mini { border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
+        .status { font-size: 0.6rem; color: var(--accent); font-weight: 700; text-transform: uppercase; border: 1px solid var(--accent); padding: 2px 8px; border-radius: 3px; letter-spacing: 1px; }
+        
+        h1 { color: #fff; font-weight: 900; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { color: var(--accent); font-size: 1.1rem; text-transform: uppercase; margin-top: 35px; font-weight: 800; letter-spacing: 1px; border-left: 3px solid var(--accent-secondary); padding-left: 15px; }
+        h3 { color: #fff; font-size: 1rem; margin-top: 20px; font-weight: 700; }
+        .content-block { background: #0f0f0f; border: 1px solid #222; padding: 20px; border-radius: 6px; margin-bottom: 20px; }
+        
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        strong { color: #fff; }
+        
+        .back-btn { color: #555; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+        .back-btn:hover { color: var(--accent); }
+        .footer-note { font-size: 0.7rem; color: #444; text-align: center; margin-top: 40px; text-transform: uppercase; }
+        .tech-tag { font-size: 0.65rem; background: #1a1a1a; padding: 3px 8px; border-radius: 4px; border: 1px solid #333; color: var(--accent-secondary); font-weight: bold; margin-bottom: 10px; display: inline-block; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-mini">
+        <a href="index.html" class="back-btn">← Retour Index</a>
+        <span class="status">Module: Component_Fabrication_v1.0</span>
+    </div>
+
+    <h1>🔬 Créer des composants électroniques</h1>
+    <p>Créer des composants électroniques à partir de zéro est un processus complexe qui nécessite des compétences en électronique, en conception de circuits, en fabrication de prototypes, et parfois même en conception de semi-conducteurs. Voici un aperçu des étapes générales :</p>
+
+    <h2>1. Conception de la carte de circuit imprimé (PCB)</h2>
+    <div class="content-block">
+        <p>Les composants électroniques sont généralement assemblés sur un circuit imprimé (PCB). Voici comment procéder :</p>
+        
+        <h3>a. Conception du circuit électronique</h3>
+        <p><strong>Schéma de circuit :</strong> Tout commence par le diagramme montrant comment les composants (résistances, condensateurs, transistors, IC) sont connectés. Utilisez KiCad, Eagle ou Altium Designer. Assurez-vous du respect des règles de conception (valeurs, polarité).</p>
+        
+
+        <h3>b. Conception du PCB (Layout)</h3>
+        <p>Il s'agit de créer la disposition physique. Placez les composants et tracez les pistes électriques de manière optimale pour éviter les courts-circuits. Exportez ensuite le fichier <strong>Gerber</strong>.</p>
+        
+
+        <h3>c. Fabrication du PCB</h3>
+        <p>Envoyez les fichiers Gerber à une entreprise spécialisée (JLCPCB, PCBWay, OSHPark). Le processus inclut la gravure du cuivre et l'assemblage de la carte.</p>
+    </div>
+
+    <h2>2. Fabrication des composants électroniques</h2>
+    <div class="content-block">
+        <h3>a. Choix des composants</h3>
+        <ul>
+            <li><strong>Résistances :</strong> Limitent le courant.</li>
+            <li><strong>Condensateurs :</strong> Stockent l'énergie.</li>
+            <li><strong>Transistors :</strong> Contrôlent ou amplifient le signal.</li>
+            <li><strong>Diodes :</strong> Sens unique de circulation.</li>
+            <li><strong>Circuits intégrés (IC) :</strong> Fonctions complexes (amplis, microcontrôleurs).</li>
+        </ul>
+
+        <h3>b. Technologies de fabrication</h3>
+        <p>La microfabrication industrielle (Intel, Samsung) utilise la <strong>lithographie</strong> sur silicium, impossible à reproduire chez soi. Pour des composants simples :</p>
+        <ul>
+            <li><strong>Résistances :</strong> Enroulement de fil ou film métallique sur substrat.</li>
+            <li><strong>Transistors :</strong> Semi-conducteurs nécessitant du silicium, du phosphore et du bore dans un environnement contrôlé.</li>
+        </ul>
+
+        <h3>c. Montage des composants</h3>
+        <ul>
+            <li><strong>Soudure manuelle :</strong> Utilisation d'un fer à souder et d'étain.</li>
+            <li><strong>Soudure à la vague :</strong> Bain d'étain fondu pour production industrielle.</li>
+            <li><strong>Soudure en reflow :</strong> Four chauffant pour composants montés en surface (SMD).</li>
+        </ul>
+        
+    </div>
+
+    <h2>3. Test et validation du circuit</h2>
+    <div class="content-block">
+        <ul>
+            <li><strong>Contrôle de l'alimentation :</strong> Vérification des tensions.</li>
+            <li><strong>Test de fonctionnement :</strong> Utilisation d'un oscilloscope ou d'un multimètre.</li>
+            <li><strong>Simulation :</strong> Test virtuel via LTSpice, Proteus ou Fritzing avant construction réelle.</li>
+        </ul>
+        
+    </div>
+
+    <h2>4. Prototypage et itérations</h2>
+    <div class="content-block">
+        <p>Ajustez le schéma ou le choix des composants après tests pour optimiser la performance.</p>
+        <h3>Semi-conducteurs avancés :</h3>
+        <p>La création de puces spécifiques implique le dépôt de couches de matériaux et l'implantation d'ions, processus industriels très spécialisés.</p>
+    </div>
+
+    <h2 style="border-left: 3px solid #fff;">Conclusion</h2>
+    <p>Créer des composants à partir de zéro demande une compréhension approfondie. Pour des composants de base, assemblez des PCBs avec des standards du marché. Pour des puces complexes, les méthodes industrielles restent indispensables en raison de la sophistication des équipements requis. 🎯</p>
+
+    <div class="footer-note">
+        ALPHA_ARCHIVE // SECTION_ELECTRONICS // 2026
+    </div>
+</div>
+
+</body>
+</html>

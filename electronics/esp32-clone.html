@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha - ESP32 & ESP8266 Engineering</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #e67e22; --accent-secondary: #00cec9; --code-bg: #000; }
+        body { 
+            background-color: var(--bg); color: #ccc; 
+            font-family: 'Inter', sans-serif; line-height: 1.6; padding: 20px;
+        }
+        .container { max-width: 900px; background: var(--card-bg); padding: 40px; border-radius: 8px; border: 1px solid #222; }
+        .header-mini { border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
+        .status { font-size: 0.6rem; color: var(--accent); font-weight: 700; text-transform: uppercase; border: 1px solid var(--accent); padding: 2px 8px; border-radius: 3px; letter-spacing: 1px; }
+        
+        h1 { color: #fff; font-weight: 900; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { color: var(--accent); font-size: 1.1rem; text-transform: uppercase; margin-top: 35px; font-weight: 800; letter-spacing: 1px; border-left: 3px solid var(--accent-secondary); padding-left: 15px; }
+        h3 { color: #fff; font-size: 1rem; margin-top: 20px; font-weight: 700; }
+        .content-block { background: #0f0f0f; border: 1px solid #222; padding: 20px; border-radius: 6px; margin-bottom: 20px; }
+        .code-snippet { background: var(--code-bg); padding: 15px; border-radius: 4px; border-left: 3px solid var(--accent); font-family: 'Consolas', monospace; color: #e0e0e0; margin: 15px 0; font-size: 0.85rem; position: relative; white-space: pre-wrap; }
+        
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        strong { color: #fff; }
+        
+        .back-btn { color: #555; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+        .back-btn:hover { color: var(--accent); }
+        .footer-note { font-size: 0.7rem; color: #444; text-align: center; margin-top: 40px; text-transform: uppercase; }
+        .chip-tag { font-size: 0.65rem; background: #1a1a1a; padding: 3px 8px; border-radius: 4px; border: 1px solid #333; color: var(--accent-secondary); font-weight: bold; margin-bottom: 10px; display: inline-block; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-mini">
+        <a href="index.html" class="back-btn">← Retour Index</a>
+        <span class="status">Module: Espressif_Systems_v1.0</span>
+    </div>
+
+    <h1>📶 ESP32 & ESP8266 : Intégration et Projets</h1>
+    <p>Créer un ESP32 ou un ESP8266 à partir de zéro est une tâche complexe. Cependant, vous pouvez utiliser ces microcontrôleurs dans vos propres projets, en les intégrant sur une carte personnalisée ou en utilisant un module prêt à l'emploi.</p>
+
+    <h2>1. Utiliser un module prêt à l'emploi</h2>
+    <div class="content-block">
+        <p>C'est la méthode la plus courante. Ces modules intègrent déjà le microcontrôleur avec les connecteurs et régulateurs nécessaires.</p>
+        <ul>
+            <li><strong>ESP32 :</strong> Exemple : ESP32 DevKit V1. Plus puissant (dual-core), Bluetooth + Wi-Fi.</li>
+            <li><strong>ESP8266 :</strong> Exemple : NodeMCU ou Wemos D1 Mini. Plus simple, spécialisé Wi-Fi.</li>
+        </ul>
+        <p>Ces cartes sont programmables via l'IDE Arduino ou PlatformIO.</p>
+        
+    </div>
+
+    <h2>2. Concevoir une carte personnalisée (PCB)</h2>
+    <div class="content-block">
+        <p>Pour un projet avancé, vous pouvez concevoir votre propre circuit imprimé (PCB) pour accueillir le module.</p>
+        
+        <h3>Étapes de conception :</h3>
+        <ul>
+            <li><strong>Choisir le microcontrôleur :</strong> ESP32-WROOM-32 (puissant) ou ESP8266 (économique).</li>
+            <li><strong>Schéma électronique :</strong> Utilisez KiCad ou Eagle. Incluez les régulateurs, condensateurs et connecteurs GPIO.</li>
+            <li><strong>Design du PCB :</strong> Tracez les pistes de cuivre en évitant les courts-circuits.</li>
+            <li><strong>Fabrication :</strong> Exportez les fichiers <em>Gerber</em> vers un fabricant (JLCPCB, PCBWay).</li>
+            <li><strong>Soudure :</strong> Attention à la précision (boîtiers QFN sans broches).</li>
+            <li><strong>Programmation :</strong> Installation des drivers USB-to-Serial pour la communication.</li>
+        </ul>
+        
+    </div>
+
+    <h2>3. Travailler avec l'IDE Arduino</h2>
+    <div class="content-block">
+        <h3>Installation :</h3>
+        <ol>
+            <li>Dans <em>Fichier > Préférences</em>, ajoutez les URLs suivantes :</li>
+            <ul>
+                <li><strong>ESP32 :</strong> <code>https://dl.espressif.com/dl/package_esp32_index.json</code></li>
+                <li><strong>ESP8266 :</strong> <code>http://arduino.esp8266.com/stable/package_esp8266com_index.json</code></li>
+            </ul>
+            <li>Installez les cartes via le <em>Gestionnaire de cartes</em>.</li>
+        </ol>
+
+        <h3>Exemple de code (Blink LED) :</h3>
+        <div class="code-snippet">
+void setup() {
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(1000);
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(1000);
+}</div>
+    </div>
+
+    <h2>4. Applications et Cas d'usage</h2>
+    <div class="content-block">
+        <ul>
+            <li><strong>Contrôles IoT :</strong> Connecter des capteurs à Internet.</li>
+            <li><strong>Serveur Web :</strong> Interface utilisateur via navigateur.</li>
+            <li><strong>Domotique :</strong> Automatisation d'appareils (lumières, relais).</li>
+            <li><strong>Bluetooth (ESP32) :</strong> Applications BLE (Bluetooth Low Energy).</li>
+        </ul>
+    </div>
+
+    <h2 style="border-left: 3px solid #fff;">Conclusion</h2>
+    <p>Bien que fabriquer la puce soit hors de portée, concevoir une carte personnalisée autour d'un module ESP est un excellent moyen d'apprendre l'ingénierie électronique et de créer des objets connectés performants. 🎯</p>
+
+    <div class="footer-note">
+        ALPHA_ARCHIVE // SECTION_IOT // 2026
+    </div>
+</div>
+
+</body>
+</html>

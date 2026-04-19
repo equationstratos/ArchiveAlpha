@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Alpha - Panneau Solaire Maison</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #f1c40f; }
+        body { background-color: var(--bg); color: #ccc; font-family: 'Inter', sans-serif; line-height: 1.6; }
+        .container { max-width: 900px; padding: 40px 20px; }
+        h1 { color: #fff; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; border-bottom: 2px solid var(--accent); padding-bottom: 10px; }
+        h2 { color: var(--accent); font-size: 1.4rem; text-transform: uppercase; margin-top: 40px; background: #1a1a1a; padding: 10px; border-radius: 4px; }
+        h3 { color: #fff; font-size: 1.1rem; margin-top: 25px; border-left: 3px solid var(--accent); padding-left: 15px; }
+        .content-box { background: var(--card-bg); border: 1px solid #222; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        .warning-box { border: 1px solid #dc3545; background: rgba(220, 53, 69, 0.1); padding: 15px; border-radius: 8px; color: #ff6b6b; margin-bottom: 20px; }
+        .back-link { color: #555; text-decoration: none; font-size: 0.8rem; font-weight: 700; }
+        .back-link:hover { color: var(--accent); }
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 5px; }
+        .img-placeholder { text-align: center; margin: 20px 0; font-style: italic; color: var(--accent); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="./index.html" class="back-link">← RETOUR INDEX ÉNERGIES</a>
+                
+        <h1 class="mt-4">Panneau Solaire Maison</h1>
+        
+        <p class="mt-3">
+            Fabriquer un panneau solaire maison est un projet intéressant et utile, bien que cela nécessite quelques compétences en électricité et en soudure. Voici un guide pour fabriquer un panneau solaire de base à partir de cellules solaires que tu peux acheter et assembler.
+        </p>
+
+        <h2>Matériaux nécessaires</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Cellules solaires :</strong> Des cellules photovoltaïques (mono ou polycristallines). Le nombre dépend de la puissance voulue (une cellule produit environ 0,5 à 0,6V).</li>
+                <li><strong>Plaque de support :</strong> Bois, plastique ou métal pour fixer les cellules.</li>
+                <li><strong>Soudure :</strong> Fil de soudure (cuivre) et un fer à souder.</li>
+                <li><strong>Boîte de jonction :</strong> Pour relier les cellules au dispositif externe.</li>
+                <li><strong>Diodes de blocage :</strong> Pour éviter le retour de courant la nuit.</li>
+                <li><strong>Câblage :</strong> Câbles électriques pour relier au système de stockage (batterie).</li>
+                <li><strong>Protection :</strong> Verre ou Plexiglass pour protéger de l'humidité et des chocs.</li>
+                <li><strong>Fixation :</strong> Silicone ou colle forte.</li>
+                <li><strong>Outils :</strong> Scie, pince, mètre, vis, perceuse.</li>
+            </ul>
+        </div>
+
+        <h2>Étapes de fabrication</h2>
+        <div class="content-box">
+            <h3>1. Préparation des cellules solaires</h3>
+            <p>Les cellules de 3 à 5W sont courantes. Organise-les sur ta plaque (ex: 36 cellules pour un panneau de 12V).</p>
+
+            <h3>2. Organiser les cellules solaires</h3>
+            <p>Dispose les cellules en laissant de l'espace pour les fils. Connecte-les en <strong>série</strong> pour augmenter la tension (ex: 6 cellules de 0,5V = 3V) ou en <strong>parallèle</strong> pour augmenter le courant.</p>
+
+            <h3>3. Soudure des cellules solaires</h3>
+            
+            <ul>
+                <li>Soudure entre les bornes négative et positive de chaque cellule.</li>
+                <li>Assure-toi que chaque fil est solidement soudé et isolé.</li>
+                <li><strong>Vérification :</strong> Utilise un multimètre pour tester la tension à la lumière.</li>
+            </ul>
+
+            <h3>4. Fixation et protection</h3>
+            <ul>
+                <li>Colle les cellules au silicone sur la plaque pour éviter qu'elles ne bougent.</li>
+                <li>Fixe le plexiglass ou le verre par-dessus pour l'étanchéité.</li>
+            </ul>
+
+            <h3>5. Boîte de jonction et connexion</h3>
+            <p>Installe la boîte de jonction à l'arrière. Intègre les <strong>diodes de blocage</strong>. Relie la sortie à un régulateur de charge puis à ta batterie ou ton onduleur.</p>
+
+            <h3>6. Test final</h3>
+            <p>Expose le panneau au soleil direct. Avec un multimètre, vérifie la tension de sortie (généralement entre 12V et 18V pour un montage standard).</p>
+        </div>
+
+        <h2>Optimisation & Applications</h2>
+        <div class="content-box">
+            <h3>Conseils de performance :</h3>
+            <ul>
+                <li><strong>Inclinaison :</strong> Oriente le panneau vers le soleil selon ta latitude.</li>
+                <li><strong>Régulateur :</strong> Indispensable pour ne pas endommager la batterie.</li>
+                <li><strong>Ensoleillement :</strong> Maximise l'exposition directe.</li>
+            </ul>
+
+            <h3>Applications possibles :</h3>
+            <ul>
+                <li>Charge de petits appareils (téléphones, lampes, radios).</li>
+                <li>Éclairage de jardin ou de maison.</li>
+                <li>Stockage d'énergie hors réseau.</li>
+            </ul>
+        </div>
+
+        <div class="content-box">
+            <h3>Conclusion</h3>
+            <p>C'est un excellent projet pour comprendre l'énergie solaire, même si le rendement sera plus modeste qu'un panneau commercial. C'est le premier pas vers l'autonomie électrique.</p>
+            <p><em>Besoin de détails sur des systèmes plus puissants ou le stockage ? Fais-le moi savoir ! 😊</em></p>
+        </div>
+
+        <div class="text-muted text-center mt-4" style="font-size: 0.7rem; border-top: 1px solid #222; padding-top: 20px;">
+            ARCHIVE ALPHA - MODULE ÉNERGIE - SOLAIRE // VERSION 1.0
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Alpha - Fabriquer une Ampoule Simple</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #f1c40f; }
+        body { background-color: var(--bg); color: #ccc; font-family: 'Inter', sans-serif; line-height: 1.6; }
+        .container { max-width: 900px; padding: 40px 20px; }
+        h1 { color: #fff; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; border-bottom: 2px solid var(--accent); padding-bottom: 10px; }
+        h2 { color: var(--accent); font-size: 1.4rem; text-transform: uppercase; margin-top: 40px; background: #1a1a1a; padding: 10px; border-radius: 4px; }
+        h3 { color: #fff; font-size: 1.1rem; margin-top: 25px; border-left: 3px solid var(--accent); padding-left: 15px; }
+        .content-box { background: var(--card-bg); border: 1px solid #222; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        .warning-box { border: 1px solid #dc3545; background: rgba(220, 53, 69, 0.1); padding: 15px; border-radius: 8px; color: #ff6b6b; margin-bottom: 20px; }
+        .back-link { color: #555; text-decoration: none; font-size: 0.8rem; font-weight: 700; }
+        .back-link:hover { color: var(--accent); }
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="./index.html" class="back-link">← RETOUR INDEX ÉNERGIES</a>
+                
+        <h1 class="mt-4">Fabriquer une Ampoule</h1>
+        
+        <p class="mt-3">
+            Fabriquer une ampoule est un défi intéressant ! Voici les principes de base pour créer une ampoule simple :
+        </p>
+
+        <h2>🔹 Matériaux nécessaires</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Un filament :</strong> Tungstène (idéal), fil de fer fin, ou fil de carbone.</li>
+                <li><strong>Un support pour le filament :</strong> Électrodes métalliques (clous, fils de cuivre).</li>
+                <li><strong>Une source d’alimentation :</strong> Pile ou batterie (3V à 12V selon le filament).</li>
+                <li><strong>Une enveloppe protectrice :</strong> Bocal en verre ou tube en verre.</li>
+                <li><strong>Un moyen d’éliminer l’oxygène :</strong> Pompe à vide ou remplissage avec un gaz inerte (argon, azote).</li>
+            </ul>
+        </div>
+
+        <h2>🛠 Étapes de fabrication</h2>
+        <div class="content-box">
+            
+            <h3>1️⃣ Préparer le filament</h3>
+            <p>Prends un fil très fin en tungstène ou en acier. Forme une petite spirale pour mieux résister à la chaleur.</p>
+            
+            <h3>2️⃣ Fixer le filament sur les électrodes</h3>
+            <p>Relie les extrémités du filament à deux fils de cuivre. Assure-toi qu'ils sont bien fixés pour éviter les courts-circuits.</p>
+            
+            <h3>3️⃣ Créer l'enveloppe protectrice</h3>
+            <p>Place le filament et ses électrodes dans un bocal en verre transparent. Si possible, utilise une pompe à vide pour retirer l’air (l’oxygène oxyde le filament et le détruit rapidement). Si tu as un gaz inerte (argon, azote), remplis le bocal pour prolonger la durée de vie du filament.</p>
+            
+            <h3>4️⃣ Brancher l’ampoule</h3>
+            <p>Connecte les fils de cuivre à une batterie de faible tension (3V - 12V). Si tout est bien fait, le filament va chauffer et émettre de la lumière !</p>
+        </div>
+
+        <div class="warning-box">
+            <h3>⚠ Précautions de sécurité</h3>
+            <ul>
+                <li>Ne touche pas le filament lorsqu'il est sous tension (il peut être très chaud).</li>
+                <li>Évite les courts-circuits en t’assurant que les fils ne se touchent pas directement.</li>
+                <li>Si tu travailles sous vide, fais attention à la pression du verre.</li>
+            </ul>
+        </div>
+
+        <h2>💡 Explication scientifique</h2>
+        <div class="content-box">
+            <p>L’ampoule fonctionne grâce à <strong>l’effet Joule</strong> :</p>
+            <p>Quand un courant électrique traverse un filament, celui-ci résiste au passage des électrons, ce qui produit de la chaleur. À haute température (plus de 2 000°C pour le tungstène), il commence à émettre de la lumière.</p>
+            <p>Dans les ampoules modernes, on utilise des LEDs ou des fluorescents au lieu de filaments pour une meilleure efficacité énergétique.</p>
+        </div>
+
+        <div class="content-box text-center">
+            <p><strong>Tu veux essayer de fabriquer une ampoule DIY ? 😃</strong></p>
+        </div>
+
+        <div class="text-muted text-center mt-4" style="font-size: 0.7rem; border-top: 1px solid #222; padding-top: 20px;">
+            ARCHIVE ALPHA - MODULE ÉNERGIE - OPTRONIQUE // VERSION 1.0
+        </div>
+    </div>
+</body>
+</html>

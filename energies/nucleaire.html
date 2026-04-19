@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Alpha - Énergie Nucléaire</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #9b59b6; }
+        body { background-color: var(--bg); color: #ccc; font-family: 'Inter', sans-serif; line-height: 1.6; }
+        .container { max-width: 900px; padding: 40px 20px; }
+        h1 { color: #fff; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; border-bottom: 2px solid var(--accent); padding-bottom: 10px; }
+        h2 { color: var(--accent); font-size: 1.4rem; text-transform: uppercase; margin-top: 40px; background: #1a1a1a; padding: 10px; border-radius: 4px; }
+        h3 { color: #fff; font-size: 1.1rem; margin-top: 25px; border-left: 3px solid var(--accent); padding-left: 15px; }
+        .content-box { background: var(--card-bg); border: 1px solid #222; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        .warning-box { border: 1px solid #dc3545; background: rgba(220, 53, 69, 0.1); padding: 15px; border-radius: 8px; color: #ff6b6b; margin-bottom: 20px; }
+        .back-link { color: #555; text-decoration: none; font-size: 0.8rem; font-weight: 700; }
+        .back-link:hover { color: var(--accent); }
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 5px; }
+        .img-placeholder { text-align: center; margin: 20px 0; font-style: italic; color: var(--accent); border: 1px dashed #333; padding: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="./index.html" class="back-link">← RETOUR INDEX ÉNERGIES</a>
+                
+        <h1 class="mt-4">Énergie Nucléaire</h1>
+        
+        <p class="mt-3">
+            Le nucléaire fonctionne grâce à la transformation de l’énergie contenue dans le noyau des atomes. Cette énergie peut être libérée par <strong>fission</strong> (centrales nucléaires actuelles) ou <strong>fusion</strong> (future énergie propre en développement).
+        </p>
+
+        <h2>⚛ 1. Principe de base</h2>
+        <div class="content-box">
+            <p>Les noyaux des atomes contiennent des protons et des neutrons liés par une force extrêmement puissante. Lorsque ces noyaux sont cassés ou fusionnés, une grande quantité d’énergie est libérée sous forme de chaleur et de rayonnements.</p>
+            <p>Il existe deux façons d'exploiter cette énergie :</p>
+            <ol>
+                <li><strong>La fission nucléaire</strong> (actuellement utilisée dans les centrales).</li>
+                <li><strong>La fusion nucléaire</strong> (future technologie, utilisée par le Soleil 🌞).</li>
+            </ol>
+        </div>
+
+        <h2>🔥 2. La Fission Nucléaire (Actuelle)</h2>
+        <div class="content-box">
+            <h3>Comment ça marche ?</h3>
+            <div class="img-placeholder">
+
+[Image of nuclear fission reaction chain]
+</div>
+            <ul>
+                <li>Un neutron percute un noyau d'uranium-235 ou de plutonium-239.</li>
+                <li>Le noyau se casse, libérant de l’énergie et plusieurs autres neutrons.</li>
+                <li>Ces neutrons déclenchent d’autres fissions → Réaction en chaîne contrôlée.</li>
+                <li>La chaleur dégagée chauffe de l’eau → production de vapeur.</li>
+                <li>La vapeur fait tourner une turbine → production d’électricité via un alternateur.</li>
+            </ul>
+
+            <h3>Sécurité et contrôle</h3>
+            <p>Pour éviter une réaction incontrôlée, des <strong>barres de contrôle</strong> en bore ou en cadmium absorbent les neutrons. Le réacteur est protégé par une enceinte de confinement.</p>
+            
+            <p><strong>Bilan :</strong><br>
+            ✅ Production stable et massive. Pas d’émission de CO₂.<br>
+            ❌ Déchets radioactifs à long terme. Risques d’accident (Tchernobyl, Fukushima).</p>
+        </div>
+
+        <h2>☀ 3. La Fusion Nucléaire (Futur)</h2>
+        <div class="content-box">
+            <h3>Comment ça marche ?</h3>
+            <div class="img-placeholder"></div>
+            <ul>
+                <li>Deux noyaux légers (deutérium et tritium) fusionnent à plus de 100 millions °C.</li>
+                <li>Ils forment un noyau d'hélium et libèrent une énorme énergie.</li>
+                <li>Pas de réaction en chaîne, très peu de déchets radioactifs.</li>
+            </ul>
+
+            <h3>Défis techniques</h3>
+            <p>La technologie nécessite un confinement magnétique (tokamaks) et des températures extrêmes. Projet phare : <strong>ITER</strong> en France.</p>
+            
+            <p><strong>Bilan :</strong><br>
+            ✅ Énergie quasi illimitée. Pas de déchets dangereux.<br>
+            ❌ Technologie complexe, pas encore viable industriellement.</p>
+        </div>
+
+        <h2>🏗 4. Fonctionnement d'une centrale</h2>
+        <div class="content-box">
+            <div class="img-placeholder"></div>
+            <h3>Composants principaux</h3>
+            <ul>
+                <li><strong>Réacteur :</strong> Lieu de la fission.</li>
+                <li><strong>Circuit de refroidissement :</strong> Transporte la chaleur.</li>
+                <li><strong>Générateur de vapeur :</strong> Transforme l’eau en vapeur.</li>
+                <li><strong>Turbine & Alternateur :</strong> Produisent l'électricité.</li>
+                <li><strong>Condenseur :</strong> Refroidit la vapeur (d'où sort la vapeur d'eau visible au sommet des tours).</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <h3>⚠ Risques et gestion des déchets</h3>
+            <p>Les déchets radioactifs doivent être stockés pendant des milliers d’années, souvent enterrés en profondeur. La sécurité est le point critique du nucléaire.</p>
+        </div>
+
+        <h2>🔌 5. Pourquoi utiliser le nucléaire ?</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Forte production :</strong> 1g d'uranium ≈ plusieurs tonnes de charbon.</li>
+                <li><strong>Faible impact carbone :</strong> Pas d'émissions directes de gaz à effet de serre.</li>
+                <li><strong>Stabilité :</strong> Indépendant du soleil ou du vent.</li>
+            </ul>
+            <p class="mt-3"><em>Le nucléaire représente environ 70% de l’électricité en France. Tu veux plus de détails sur un point précis ? 😊⚛</em></p>
+        </div>
+
+        <div class="text-muted text-center mt-4" style="font-size: 0.7rem; border-top: 1px solid #222; padding-top: 20px;">
+            ARCHIVE ALPHA - MODULE ÉNERGIE - NUCLÉAIRE // VERSION 1.0
+        </div>
+    </div>
+</body>
+</html>

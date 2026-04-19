@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha - DC Motor Engineering</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #f1c40f; --accent-secondary: #e67e22; --code-bg: #000; }
+        body { 
+            background-color: var(--bg); color: #ccc; 
+            font-family: 'Inter', sans-serif; line-height: 1.6; padding: 20px;
+        }
+        .container { max-width: 900px; background: var(--card-bg); padding: 40px; border-radius: 8px; border: 1px solid #222; }
+        .header-mini { border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
+        .status { font-size: 0.6rem; color: var(--accent); font-weight: 700; text-transform: uppercase; border: 1px solid var(--accent); padding: 2px 8px; border-radius: 3px; letter-spacing: 1px; }
+        
+        h1 { color: #fff; font-weight: 900; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { color: var(--accent); font-size: 1.1rem; text-transform: uppercase; margin-top: 35px; font-weight: 800; letter-spacing: 1px; border-left: 3px solid var(--accent-secondary); padding-left: 15px; }
+        h3 { color: #fff; font-size: 1rem; margin-top: 20px; font-weight: 700; }
+        .content-block { background: #0f0f0f; border: 1px solid #222; padding: 20px; border-radius: 6px; margin-bottom: 20px; }
+        
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        strong { color: #fff; }
+        
+        .back-btn { color: #555; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; transition: 0.2s; }
+        .back-btn:hover { color: var(--accent); }
+        .footer-note { font-size: 0.7rem; color: #444; text-align: center; margin-top: 40px; text-transform: uppercase; }
+        .parts-tag { font-size: 0.65rem; background: #1a1a1a; padding: 3px 8px; border-radius: 4px; border: 1px solid #333; color: var(--accent); font-weight: bold; margin-bottom: 10px; display: inline-block; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-mini">
+        <a href="index.html" class="back-btn">← Retour Index</a>
+        <span class="status">Module: Electromechanical_v1.0</span>
+    </div>
+
+    <h1>🌀 Créer un moteur électrique (DC)</h1>
+    <p>Créer un moteur électrique à partir de zéro est un projet complexe, mais c'est également un excellent moyen de comprendre le fonctionnement des moteurs électriques. Un moteur électrique convertit l'énergie électrique en énergie mécanique grâce à des interactions magnétiques.</p>
+
+    <h2>Matériel nécessaire</h2>
+    <div class="content-block">
+        <ul>
+            <li><strong>Fil de cuivre émaillé :</strong> Pour fabriquer les bobines.</li>
+            <li><strong>Aimants permanents :</strong> Pour le champ magnétique.</li>
+            <li><strong>Commutateur :</strong> Ou interrupteur rotatif.</li>
+            <li><strong>Batterie :</strong> Alimentation (ex: 9V).</li>
+            <li><strong>Support :</strong> Plastique ou bois pour maintenir les composants.</li>
+            <li><strong>Axes & Contacts :</strong> Axes en métal, piles ou ressorts.</li>
+            <li><strong>Outils :</strong> Colle, ciseaux ou pince coupante.</li>
+        </ul>
+    </div>
+
+    
+
+    <h2>Étapes de Fabrication</h2>
+
+    <h3>1. Fabriquer la bobine (ou rotor)</h3>
+    <div class="content-block">
+        <p>Le rotor est l'une des parties les plus importantes d'un moteur. C'est là où l'énergie électrique est convertie en énergie mécanique.</p>
+        <ul>
+            <li><strong>Enrouler le fil de cuivre :</strong> Prends un fil de cuivre émaillé (isolé). Enroule ce fil autour d'un axe central (clou ou tige) pour créer une bobine de 100 à 200 tours. Laisse quelques centimètres à chaque extrémité.</li>
+            <li><strong>Retirer l'isolant :</strong> Utilise une pince pour gratter l'isolant et exposer le cuivre sur les deux bords de la bobine pour établir le contact électrique.</li>
+        </ul>
+    </div>
+
+    <h3>2. Préparer les aimants permanents (stator)</h3>
+    <div class="content-block">
+        <p>Fixe deux aimants permanents sur un support solide. Ils doivent être placés de manière à ce que leur pôle nord et pôle sud soient alignés autour de la bobine pour générer le champ magnétique nécessaire.</p>
+    </div>
+
+    <h3>3. Assembler le rotor et le stator</h3>
+    <div class="content-block">
+        <ul>
+            <li><strong>Fixer la bobine :</strong> Elle doit pouvoir tourner librement autour de l'axe central sans frotter.</li>
+            <li><strong>Positionnement :</strong> Place la bobine au centre du champ magnétique, entre les deux aimants. Ils doivent être proches mais sans contact physique.</li>
+        </ul>
+    </div>
+
+    
+
+    <h3>4. Installer le commutateur et les balais</h3>
+    <div class="content-block">
+        <ul>
+            <li><strong>Le commutateur :</strong> Connecté au rotor, il change l'orientation du courant lors de la rotation.</li>
+            <li><strong>Les balais :</strong> Morceaux de métal (charbon ou laiton) qui appuient contre le commutateur pour faire passer le courant de la batterie à la bobine tournante.</li>
+        </ul>
+    </div>
+
+    <h3>5. Connexion et Mise en marche</h3>
+    <div class="content-block">
+        <p>Connecte la batterie aux balais. Le courant électrique va circuler dans la bobine, créant un champ magnétique qui interagit avec les aimants fixes. Le commutateur inverse le courant à chaque demi-tour, maintenant la rotation continue.</p>
+    </div>
+
+    <h2>7. Test et ajustements</h2>
+    <div class="content-block">
+        <ul>
+            <li><strong>Vérification :</strong> Assure-toi que la bobine est bien centrée et que les contacts sont francs.</li>
+            <li><strong>Vitesse :</strong> Ajuste le nombre de tours de fil ou la tension de la batterie pour modifier la puissance.</li>
+        </ul>
+    </div>
+
+    <h2 style="border-left: 3px solid #fff;">Conclusion</h2>
+    <p>Construire un moteur électrique permet d'explorer la physique de l'électromagnétisme de manière concrète. Ce modèle simple peut être amélioré en utilisant des matériaux plus spécialisés ou en passant à des architectures de moteurs AC ou à induction. 🎯</p>
+
+    <div class="footer-note">
+        ALPHA_ARCHIVE // SECTION_ELECTROMECHANICS // 2026
+    </div>
+</div>
+
+</body>
+</html>

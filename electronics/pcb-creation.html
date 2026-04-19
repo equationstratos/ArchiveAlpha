@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha - PCB Engineering Full Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #ffd700; --accent-secondary: #f39c12; --code-bg: #000; }
+        body { 
+            background-color: var(--bg); color: #ccc; 
+            font-family: 'Inter', sans-serif; line-height: 1.6; padding: 20px;
+        }
+        .container { max-width: 900px; background: var(--card-bg); padding: 40px; border-radius: 8px; border: 1px solid #222; }
+        .header-mini { border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
+        .status { font-size: 0.6rem; color: var(--accent); font-weight: 700; text-transform: uppercase; border: 1px solid var(--accent); padding: 2px 8px; border-radius: 3px; letter-spacing: 1px; }
+        
+        h1 { color: #fff; font-weight: 900; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { color: var(--accent); font-size: 1.1rem; text-transform: uppercase; margin-top: 35px; font-weight: 800; letter-spacing: 1px; border-left: 3px solid var(--accent-secondary); padding-left: 15px; }
+        h3 { color: #fff; font-size: 1rem; margin-top: 20px; font-weight: 700; }
+
+        .content-block { background: #0f0f0f; border: 1px solid #222; padding: 20px; border-radius: 6px; margin-bottom: 20px; }
+        .method-tag { font-size: 0.65rem; background: #1a1a1a; padding: 3px 8px; border-radius: 4px; border: 1px solid #333; color: var(--accent-secondary); font-weight: bold; margin-bottom: 10px; display: inline-block; }
+        
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        strong { color: #fff; }
+        
+        .back-btn { color: #555; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; transition: 0.2s; }
+        .back-btn:hover { color: var(--accent); }
+        .footer-note { font-size: 0.7rem; color: #444; text-align: center; margin-top: 40px; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-mini">
+        <a href="index.html" class="back-btn">← Retour Index</a>
+        <span class="status">Module: Hardware_PCB_v1.0</span>
+    </div>
+
+    <h1>⚡ Créer une carte électronique (PCB)</h1>
+    <p>Créer une carte électronique (ou circuit imprimé – PCB, pour Printed Circuit Board) est un projet technique qui nécessite une bonne compréhension des principes électroniques, des matériaux et de l'outillage nécessaire pour fabriquer un circuit fonctionnel. Voici un guide étape par étape pour te permettre de fabriquer une carte électronique :</p>
+
+    <h2>1. Conception du circuit</h2>
+    <div class="content-block">
+        <p>Avant de commencer la fabrication de ta carte électronique, il est essentiel de concevoir le circuit que tu souhaites réaliser.</p>
+        
+        <h3>Étape 1 : Définir ton projet</h3>
+        <ul>
+            <li>Quel est l'objectif de ta carte électronique ? Est-ce un simple circuit (comme une lampe à LED) ou quelque chose de plus complexe (comme un microcontrôleur, un amplificateur audio, etc.) ?</li>
+            <li>Dresse la liste des composants nécessaires à ton circuit (résistances, condensateurs, transistors, microcontrôleurs, etc.).</li>
+        </ul>
+
+        <h3>Étape 2 : Schéma électronique</h3>
+        <p>Un schéma électronique est la première étape pour concevoir une carte. Il représente les composants et leur interconnexion sous forme de symboles.</p>
+        
+        <ul>
+            <li>Utilise un logiciel de conception de schémas comme Fritzing, KiCad, Eagle ou Altium Designer.</li>
+            <li>Dessine les composants et les connexions entre eux pour représenter le fonctionnement du circuit.</li>
+            <li>Vérifie le schéma pour éviter des erreurs de conception.</li>
+        </ul>
+
+        <h3>Étape 3 : Création du PCB (circuit imprimé)</h3>
+        <p>Une fois que tu as un schéma électronique validé, il faut maintenant créer le circuit imprimé (PCB) qui va accueillir les composants.</p>
+        
+        <ul>
+            <li>Utilise un logiciel de conception de PCB comme KiCad, Eagle, ou EasyEDA.</li>
+            <li>Importer le schéma dans le logiciel et utiliser des outils pour placer les composants sur le PCB et tracer les traces électriques entre eux.</li>
+            <li>Vérifie les couches du PCB (par exemple, une couche pour le cuivre et une autre pour le côté composant), la largeur des traces et l'espacement pour garantir que le circuit soit bien fabriqué.</li>
+            <li>Il existe des fonctionnalités comme le DRC (Design Rule Check) qui permettent de vérifier automatiquement si le design respecte les règles de fabrication.</li>
+        </ul>
+    </div>
+
+    <h2>2. Fabrication du PCB</h2>
+    <div class="content-block">
+        <p>Une fois que ton design est prêt, tu peux passer à la fabrication de la carte électronique.</p>
+
+        <span class="method-tag">MÉTHODE 1</span>
+        <h3>Fabrication maison (pour petits circuits)</h3>
+        <p>Si tu souhaites créer un petit circuit à la maison, tu peux suivre la méthode suivante avec des outils de base :</p>
+        
+        <strong>Matériel nécessaire :</strong>
+        <ul>
+            <li>Platine en cuivre (circuit imprimé vierge, souvent en laiton recouvert de cuivre).</li>
+            <li>Film de toner ou papier calque (si tu imprimes le circuit).</li>
+            <li>Perceuse de précision (pour faire les trous de composants).</li>
+            <li>Acide ferrique ou chlorure de fer (pour l'attaque chimique du cuivre).</li>
+            <li>Presse à chaud (pour transférer le motif du circuit sur la plaque de cuivre).</li>
+            <li>Marqueur indélébile ou feutre (pour effectuer un marquage au cas où certaines zones doivent être isolées).</li>
+        </ul>
+
+        <strong>Étapes :</strong>
+        <ol>
+            <li><strong>Impression du circuit :</strong> Imprime le circuit de ton PCB sur une feuille de film de toner ou de papier calque. Utilise une imprimante laser pour que le toner adhère bien. Si tu n’as pas de papier spécial, tu peux aussi dessiner les pistes avec un feutre permanent ou une peinture résistante à l’acide.</li>
+            <li><strong>Transfert du motif sur la platine en cuivre :</strong> Positionne le film de toner sur la plaque de cuivre et applique de la chaleur (avec un fer à repasser ou une presse) pour faire transférer le motif du toner sur la plaque de cuivre. Laisse refroidir et retire le film.</li>
+            <li><strong>Gravure du PCB :</strong> Place la platine de cuivre dans un bain d’acide ferrique (ou chlorure de fer) pour éliminer les parties non protégées par le toner. Rince bien la plaque pour enlever toute trace d’acide après gravure.</li>
+            <li><strong>Perçage des trous :</strong> Perce les trous nécessaires pour insérer les composants (comme les résistances, transistors, etc.).</li>
+            <li><strong>Détourage :</strong> Si nécessaire, coupe la carte à la taille souhaitée à l’aide d’une scie à métaux ou d’une découpeuse.</li>
+            <li><strong>Finition et nettoyage :</strong> Utilise une brosse métallique pour nettoyer les traces de cuivre et retirer toute rouille ou impureté.</li>
+        </ol>
+
+        <span class="method-tag">MÉTHODE 2</span>
+        <h3>Fabrication professionnelle</h3>
+        <p>Si tu as un projet plus complexe ou que tu souhaites une qualité plus professionnelle, tu peux faire fabriquer ta carte PCB par une société spécialisée.</p>
+        <ul>
+            <li>Utilise des plateformes comme JLCPCB, PCBWay, ou OSHPark pour envoyer ton design de PCB sous format Gerber. Ces plateformes fabriquent des cartes électroniques de haute qualité à un coût raisonnable.</li>
+            <li>Après avoir téléchargé ton fichier Gerber (qui contient toutes les informations nécessaires à la fabrication), tu peux commander des cartes PCB à des tarifs très compétitifs.</li>
+        </ul>
+    </div>
+
+    <h2>3. Soudure des composants</h2>
+    <div class="content-block">
+        <p>Une fois ta carte PCB fabriquée, il est temps de souder les composants.</p>
+        
+        <strong>Étapes :</strong>
+        <ul>
+            <li><strong>Préparation des composants :</strong> Assure-toi d'avoir tous les composants nécessaires (résistances, condensateurs, diodes, microcontrôleurs, etc.). Si tu utilises des composants à montage en surface (SMD), il te faudra peut-être un fer à souder à pointe fine et une pince fine.</li>
+            <li><strong>Soudure des composants :</strong> Place chaque composant sur les positions correspondantes sur le PCB. Chauffe les broches du composant et applique de la pâte à souder (si nécessaire) pour fixer les composants sur la carte. Utilise un fer à souder pour fondre l’étain et souder les composants aux pads du PCB.</li>
+            <li><strong>Vérification :</strong> Vérifie que toutes les connexions sont correctement soudées et qu’il n’y a pas de courts-circuits. Pour les circuits complexes, tu peux aussi utiliser un multimètre pour tester la continuité des connexions.</li>
+        </ul>
+    </div>
+
+    <h2>4. Test et mise en marche</h2>
+    <div class="content-block">
+        <p>Une fois que ta carte est assemblée, tu peux effectuer un test pour vérifier si elle fonctionne correctement.</p>
+        <ul>
+            <li>Alimente la carte en utilisant une source de courant adaptée (batterie ou alimentation de laboratoire).</li>
+            <li><strong>Test fonctionnel :</strong> Si c'est un projet comme un circuit LED, vérifie si l'alimentation et les signaux fonctionnent correctement.</li>
+            <li><strong>Correction des erreurs :</strong> Si nécessaire, refais la soudure des composants ou ajuste les connexions.</li>
+        </ul>
+    </div>
+
+    <h2>5. Finalisation et boîtier</h2>
+    <div class="content-block">
+        <p>Pour un projet fini, tu peux également créer un boîtier autour de ta carte électronique pour la protéger et l’intégrer dans ton dispositif.</p>
+        <ul>
+            <li>Utilise du plastique, du bois ou du métal pour créer le boîtier.</li>
+            <li>Installe la carte dans le boîtier et assure-toi que toutes les connexions sont bien isolées.</li>
+        </ul>
+    </div>
+
+    <h2 style="border-left: 3px solid #fff;">Conclusion</h2>
+    <p>La fabrication d'une carte électronique est un processus qui combine conception, fabrication et assemblage. Cela nécessite une bonne compréhension des composants électroniques et des techniques de soudure. En suivant les étapes mentionnées ci-dessus, tu peux créer ta propre carte électronique, que ce soit pour un projet simple ou plus complexe. Si tu es débutant, il peut être judicieux de commencer par des projets simples pour te familiariser avec le processus avant de t'attaquer à des circuits plus avancés.</p>
+
+    <div class="footer-note">
+        ALPHA_ARCHIVE // SECTION_ELECTRONICS // 2026
+    </div>
+</div>
+
+</body>
+</html>

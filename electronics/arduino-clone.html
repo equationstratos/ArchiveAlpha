@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha - Arduino Hardware Engineering</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #00878f; --accent-secondary: #00cec9; --code-bg: #000; }
+        body { 
+            background-color: var(--bg); color: #ccc; 
+            font-family: 'Inter', sans-serif; line-height: 1.6; padding: 20px;
+        }
+        .container { max-width: 900px; background: var(--card-bg); padding: 40px; border-radius: 8px; border: 1px solid #222; }
+        .header-mini { border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
+        .status { font-size: 0.6rem; color: var(--accent); font-weight: 700; text-transform: uppercase; border: 1px solid var(--accent); padding: 2px 8px; border-radius: 3px; letter-spacing: 1px; }
+        
+        h1 { color: #fff; font-weight: 900; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { color: var(--accent); font-size: 1.1rem; text-transform: uppercase; margin-top: 35px; font-weight: 800; letter-spacing: 1px; border-left: 3px solid var(--accent-secondary); padding-left: 15px; }
+        h3 { color: #fff; font-size: 1rem; margin-top: 20px; font-weight: 700; }
+        .content-block { background: #0f0f0f; border: 1px solid #222; padding: 20px; border-radius: 6px; margin-bottom: 20px; }
+        
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        strong { color: #fff; }
+        
+        .back-btn { color: #555; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+        .back-btn:hover { color: var(--accent); }
+        .footer-note { font-size: 0.7rem; color: #444; text-align: center; margin-top: 40px; text-transform: uppercase; }
+        .option-tag { font-size: 0.65rem; background: #1a1a1a; padding: 3px 8px; border-radius: 4px; border: 1px solid #333; color: var(--accent-secondary); font-weight: bold; margin-bottom: 10px; display: inline-block; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-mini">
+        <a href="index.html" class="back-btn">← Retour Index</a>
+        <span class="status">Module: Arduino_Clone_v1.0</span>
+    </div>
+
+    <h1>♾️ Fabriquer une carte Arduino (Clone)</h1>
+    <p>Créer une carte Arduino (ou un clone d'Arduino) nécessite de comprendre à la fois les concepts de microcontrôleur, de circuit électronique et d'emballage de la carte. Heureusement, la plateforme Arduino est basée sur des composants relativement simples et accessibles.</p>
+
+    <h2>1. Comprendre les composants d'une carte Arduino</h2>
+    <div class="content-block">
+        <p>Une carte Arduino standard comme l'Arduino Uno contient :</p>
+        <ul>
+            <li><strong>Microcontrôleur ATmega328P :</strong> Le cœur de la carte qui exécute le programme.</li>
+            <li><strong>Convertisseur USB-Série :</strong> Pour la communication avec l'ordinateur (CH340 ou FTDI).</li>
+            <li><strong>Régulateur de tension :</strong> Convertit l'alimentation (USB ou batterie) en tension stable.</li>
+            <li><strong>Broches d'entrée/sortie (I/O) :</strong> Pour connecter capteurs et actionneurs.</li>
+            <li><strong>Cristal de quartz (16 MHz) :</strong> L'horloge du microcontrôleur.</li>
+            <li><strong>Diode LED (Broche 13) :</strong> Pour les tests de base.</li>
+            <li><strong>Condensateurs et Résistances :</strong> Pour la stabilité et la protection.</li>
+        </ul>
+        
+    </div>
+
+    <h2>2. Concevoir le schéma électronique</h2>
+    <div class="content-block">
+        <p>Logiciels recommandés : <strong>KiCad, Fritzing, ou Eagle</strong>.</p>
+        <p>Connexions principales à intégrer :</p>
+        <ul>
+            <li>ATmega328P au centre du circuit.</li>
+            <li>Liaison entre le port USB et le convertisseur USB-Série.</li>
+            <li>Régulateur pour fournir 5V ou 3,3V.</li>
+            <li>Cristal de 16 MHz avec ses deux condensateurs de charge.</li>
+        </ul>
+        
+
+[Image of Arduino Uno circuit schematic diagram]
+
+    </div>
+
+    <h2>3. Créer le PCB (circuit imprimé)</h2>
+    <div class="content-block">
+        <ul>
+            <li>Transférez le schéma en design physique (Layout).</li>
+            <li>Tracez les pistes de cuivre reliant les composants.</li>
+            <li><strong>DRC (Design Rule Check) :</strong> Vérifiez que les distances et connexions respectent les règles de fabrication.</li>
+            <li>Exportez les fichiers <strong>Gerber</strong>.</li>
+        </ul>
+    </div>
+
+    <h2>4. Fabrication du PCB</h2>
+    <div class="content-block">
+        <span class="option-tag">OPTION 1 : DIY (Maison)</span>
+        <p>Matériel : Platine cuivre, papier calque, acide ferrique, fer à repasser.</p>
+        <ol>
+            <li>Imprimez le design au laser sur papier calque.</li>
+            <li>Transférez le toner sur le cuivre par chaleur.</li>
+            <li>Gravez dans l'acide pour dissoudre le cuivre non protégé.</li>
+            <li>Percez les trous pour les composants.</li>
+        </ol>
+
+        <span class="option-tag">OPTION 2 : PROFESSIONNELLE</span>
+        <p>Envoyez vos fichiers Gerber à un fabricant (JLCPCB, PCBWay, OSHPark) pour obtenir une carte de qualité industrielle.</p>
+    </div>
+
+    <h2>5. Soudure des composants</h2>
+    <div class="content-block">
+        <ul>
+            <li><strong>Préparation :</strong> Vérifiez l'orientation du microcontrôleur et des diodes.</li>
+            <li><strong>Soudure :</strong> Commencez par les plus petits composants, terminez par les connecteurs.</li>
+            <li><strong>Vérification :</strong> Utilisez un multimètre pour tester la continuité et l'absence de courts-circuits.</li>
+        </ul>
+        
+    </div>
+
+    <h2>6. Programmation du microcontrôleur</h2>
+    <div class="content-block">
+        <p>L'ATmega328P vierge doit recevoir un <strong>Bootloader</strong> pour être reconnu par l'IDE Arduino.</p>
+        <ul>
+            <li><strong>Via Arduino :</strong> Utilisez une autre carte Arduino comme programmateur ISP.</li>
+            <li><strong>Via ISP :</strong> Utilisez un programmateur externe (USBasp).</li>
+        </ul>
+    </div>
+
+    <h2>7. Test de la carte</h2>
+    <div class="content-block">
+        <p>Chargez un programme simple (ex: <strong>Blink LED</strong>). Si la LED clignote, la carte est opérationnelle. Testez ensuite les entrées/sorties avec des capteurs.</p>
+    </div>
+
+    <h2 style="border-left: 3px solid #fff;">Conclusion</h2>
+    <p>En suivant ces étapes, vous pouvez créer une carte entièrement personnalisée, adaptée à vos besoins spécifiques tout en restant compatible avec l'écosystème officiel Arduino. 🎯</p>
+
+    <div class="footer-note">
+        ALPHA_ARCHIVE // SECTION_ELECTRONICS // 2026
+    </div>
+</div>
+
+</body>
+</html>

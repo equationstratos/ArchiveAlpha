@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha - Multimeter Technical Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #f1c40f; --accent-secondary: #f39c12; --code-bg: #000; }
+        body { 
+            background-color: var(--bg); color: #ccc; 
+            font-family: 'Inter', sans-serif; line-height: 1.6; padding: 20px;
+        }
+        .container { max-width: 900px; background: var(--card-bg); padding: 40px; border-radius: 8px; border: 1px solid #222; }
+        .header-mini { border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
+        .status { font-size: 0.6rem; color: var(--accent); font-weight: 700; text-transform: uppercase; border: 1px solid var(--accent); padding: 2px 8px; border-radius: 3px; letter-spacing: 1px; }
+        
+        h1 { color: #fff; font-weight: 900; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { color: var(--accent); font-size: 1.1rem; text-transform: uppercase; margin-top: 35px; font-weight: 800; letter-spacing: 1px; border-left: 3px solid var(--accent-secondary); padding-left: 15px; }
+        h3 { color: #fff; font-size: 1rem; margin-top: 20px; font-weight: 700; }
+        .content-block { background: #0f0f0f; border: 1px solid #222; padding: 20px; border-radius: 6px; margin-bottom: 20px; }
+        
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        strong { color: #fff; }
+        
+        .back-btn { color: #555; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; transition: 0.2s; }
+        .back-btn:hover { color: var(--accent); }
+        .footer-note { font-size: 0.7rem; color: #444; text-align: center; margin-top: 40px; text-transform: uppercase; }
+        .mode-tag { font-size: 0.65rem; background: #1a1a1a; padding: 3px 8px; border-radius: 4px; border: 1px solid #333; color: var(--accent); font-weight: bold; margin-bottom: 10px; display: inline-block; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-mini">
+        <a href="index.html" class="back-btn">← Retour Index</a>
+        <span class="status">Module: Diagnostic_Tools_v1.1</span>
+    </div>
+
+    <h1>📟 Le Multimètre : Guide de fonctionnement</h1>
+    <p>Un multimètre est un outil de mesure électrique polyvalent qui permet de mesurer plusieurs grandeurs telles que la tension, le courant et la résistance. Voici une explication détaillée de son fonctionnement et de ses principales fonctions.</p>
+
+    <h2>1. Les Fonctions Principales</h2>
+    <div class="content-block">
+        <span class="mode-tag">VOLTMÈTRE (V)</span>
+        <h3>Mesure de la tension</h3>
+        <p>Le multimètre peut mesurer la différence de potentiel électrique entre deux points d’un circuit. Vous branchez les sondes sur les points à tester et le dispositif affiche la valeur en volts (V).</p>
+
+        <span class="mode-tag">AMPÈREMÈTRE (A)</span>
+        <h3>Mesure du courant</h3>
+        <p>Pour mesurer le courant, le multimètre doit être inséré <strong>en série</strong> dans le circuit. Il détecte le flux d’électrons et affiche la valeur en ampères (A).</p>
+
+        <span class="mode-tag">OHMMÈTRE (Ω)</span>
+        <h3>Mesure de la résistance</h3>
+        <p>En envoyant un petit courant à travers une résistance, le multimètre mesure la chute de tension et calcule la résistance selon la loi d’Ohm ($R = U/I$). La valeur est affichée en ohms (Ω).</p>
+    </div>
+
+    
+
+    <h2>2. Principe de Fonctionnement</h2>
+    <div class="content-block">
+        <h3>Circuits Internes et Plage de Mesure</h3>
+        <p>Le multimètre contient plusieurs circuits internes et des résistances de précision qui se connectent automatiquement ou manuellement selon la fonction sélectionnée. Cela permet de limiter le courant ou de mesurer des valeurs avec précision.</p>
+
+        <h3>Conversion Analogique/Numérique</h3>
+        <p>Dans les modèles numériques, un convertisseur analogique-numérique (CAN) transforme la mesure en une valeur numérique. Les modèles analogiques utilisent une aiguille sur une échelle graduée.</p>
+
+        <h3>Protection et Sécurité</h3>
+        <p>Pour éviter d’endommager l’appareil, il possède des fusibles internes et des dispositifs de protection garantissant la sécurité en cas de mesures sur des circuits de forte intensité.</p>
+    </div>
+
+    <h2>3. Utilisation d’un Multimètre</h2>
+    <div class="content-block">
+        <ol>
+            <li><strong>Sélection de la Fonction :</strong> Tournez le sélecteur (tension continue, alternative, courant, etc.). Choisissez la plage appropriée si l'appareil n'est pas en "auto-plage".</li>
+            <li><strong>Branchement des Sondes :</strong> La sonde <strong>noire sur COM</strong> (commun) et la <strong>rouge sur le port V/Ω</strong> (ou A pour le courant). Pour les courants élevés, utilisez le port spécifique (souvent 10A).</li>
+            <li><strong>Prise de Mesure :</strong> En parallèle pour tension/résistance, en série pour le courant.</li>
+            <li><strong>Lecture :</strong> Interprétez le résultat selon l’unité affichée (V, A, Ω).</li>
+        </ol>
+    </div>
+
+    
+
+    <h2>4. Conseils de Sécurité et Pratiques</h2>
+    <div class="content-block">
+        <ul>
+            <li><strong>Vérifiez la Plage :</strong> Choisissez une plage couvrant la valeur attendue pour éviter la surcharge.</li>
+            <li><strong>Courants Élevés :</strong> Soyez particulièrement vigilant et utilisez les ports protégés.</li>
+            <li><strong>État des Sondes :</strong> Vérifiez l'état des connecteurs pour éviter les risques électriques.</li>
+            <li><strong>Circuit Sous Tension :</strong> Ne mesurez jamais la résistance sur un circuit alimenté : cela fausse les résultats et peut endommager l'appareil.</li>
+        </ul>
+    </div>
+
+    <h2 style="border-left: 3px solid #fff;">Conclusion</h2>
+    <p>Le multimètre fonctionne en intégrant divers circuits de mesure et protections. C'est un outil indispensable pour vérifier la tension d’une pile, diagnostiquer un circuit ou mesurer une résistance en toute sécurité. 🎯</p>
+
+    <div class="footer-note">
+        ALPHA_ARCHIVE // SECTION_DIAGNOSTIC // 2026
+    </div>
+</div>
+
+</body>
+</html>

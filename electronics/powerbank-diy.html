@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha - Powerbank Engineering</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #2ecc71; --accent-secondary: #27ae60; --code-bg: #000; }
+        body { 
+            background-color: var(--bg); color: #ccc; 
+            font-family: 'Inter', sans-serif; line-height: 1.6; padding: 20px;
+        }
+        .container { max-width: 900px; background: var(--card-bg); padding: 40px; border-radius: 8px; border: 1px solid #222; }
+        .header-mini { border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
+        .status { font-size: 0.6rem; color: var(--accent); font-weight: 700; text-transform: uppercase; border: 1px solid var(--accent); padding: 2px 8px; border-radius: 3px; letter-spacing: 1px; }
+        
+        h1 { color: #fff; font-weight: 900; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { color: var(--accent); font-size: 1.1rem; text-transform: uppercase; margin-top: 35px; font-weight: 800; letter-spacing: 1px; border-left: 3px solid var(--accent-secondary); padding-left: 15px; }
+        h3 { color: #fff; font-size: 1rem; margin-top: 20px; font-weight: 700; }
+        .content-block { background: #0f0f0f; border: 1px solid #222; padding: 20px; border-radius: 6px; margin-bottom: 20px; }
+        
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        strong { color: #fff; }
+        
+        .back-btn { color: #555; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; transition: 0.2s; }
+        .back-btn:hover { color: var(--accent); }
+        .footer-note { font-size: 0.7rem; color: #444; text-align: center; margin-top: 40px; text-transform: uppercase; }
+        .warning-tag { font-size: 0.65rem; background: #2c0b0e; padding: 3px 8px; border-radius: 4px; border: 1px solid #5a1016; color: #ff4d4d; font-weight: bold; margin-bottom: 10px; display: inline-block; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-mini">
+        <a href="index.html" class="back-btn">← Retour Index</a>
+        <span class="status">Module: Power_Storage_v1.0</span>
+    </div>
+
+    <h1>🔋 Créer son Powerbank DIY</h1>
+    <div class="warning-tag">ALERTE SÉCURITÉ : RISQUE D'INCENDIE / EXPLOSION</div>
+    <p>Créer votre propre powerbank peut être un projet intéressant, mais travailler avec des batteries lithium-ion présente des risques. Ce guide est informatif : assurez-vous de bien comprendre les principes électriques et de suivre les consignes de sécurité.</p>
+
+    <h2>1. Matériel et composants nécessaires</h2>
+    <div class="content-block">
+        <ul>
+            <li><strong>Batteries Lithium-ion (ex. 18650) :</strong> Choisissez des cellules de bonne qualité et compatibles.</li>
+            <li><strong>Module de protection (PCB BMS) :</strong> Protège contre surcharge, décharge excessive et courts-circuits.</li>
+            <li><strong>Module convertisseur Boost :</strong> Pour élever la tension de 3,7V à 5V (standard USB).</li>
+            <li><strong>Connecteurs USB :</strong> Pour la sortie de recharge.</li>
+            <li><strong>Boîtier :</strong> Pour protéger l'ensemble du circuit.</li>
+            <li><strong>Outils :</strong> Fer à souder, multimètre, fils et étain.</li>
+        </ul>
+        
+    </div>
+
+    <h2>2. Étapes de réalisation</h2>
+
+    <h3>A. Conception et schéma</h3>
+    <div class="content-block">
+        <p><strong>Logique du circuit :</strong> Batterie → Module de protection → Module Boost → Port USB.</p>
+        <ul>
+            <li>Prévoyez un module de charge (ex. TP4056) pour recharger les batteries.</li>
+            <li>Vérifiez que le module boost peut fournir une sortie stable de 5V à l'intensité désirée.</li>
+        </ul>
+        
+    </div>
+
+    <h3>B. Assemblage</h3>
+    <div class="content-block">
+        <ol>
+            <li><strong>Préparation des batteries :</strong> Montage en parallèle (capacité accrue) ou série (tension accrue). Les cellules doivent être équilibrées.</li>
+            <li><strong>Module de protection :</strong> Connectez les batteries selon les instructions du BMS.</li>
+            <li><strong>Convertisseur Boost :</strong> Reliez la sortie du BMS à l'entrée du boost. Ajustez la sortie à 5V si nécessaire.</li>
+            <li><strong>Port USB :</strong> Soudez le port à la sortie du boost en isolant parfaitement les connexions.</li>
+            <li><strong>Intégration :</strong> Placez le tout dans le boîtier après vérification au multimètre.</li>
+        </ol>
+    </div>
+
+    <h3>C. Tests et validations</h3>
+    <div class="content-block">
+        <ul>
+            <li><strong>Tension :</strong> Vérifiez le 5V stable en charge et à vide.</li>
+            <li><strong>Charge :</strong> Testez avec un appareil de faible consommation au début.</li>
+            <li><strong>Surveillance :</strong> Contrôlez l'absence de surchauffe durant les premiers cycles.</li>
+        </ul>
+    </div>
+
+    <h2>3. Sécurité et conseils pratiques</h2>
+    <div class="content-block">
+        <ul>
+            <li><strong>Manipulation :</strong> Ne jamais court-circuiter les batteries. Utilisez des cellules identiques (marque, âge, capacité).</li>
+            <li><strong>Boîtier :</strong> Envisagez un matériau résistant au feu.</li>
+            <li><strong>Expertise :</strong> Si vous n'êtes pas à l'aise, demandez l'aide d'un professionnel.</li>
+        </ul>
+    </div>
+
+    <h2 style="border-left: 3px solid #fff;">Conclusion</h2>
+    <p>La fabrication d'un powerbank demande de la rigueur et un respect strict des consignes de sécurité. Bien documenté, ce projet permet de concevoir un appareil fonctionnel et personnalisé. Soyez toujours prudent. 🎯</p>
+
+    <div class="footer-note">
+        ALPHA_ARCHIVE // SECTION_POWER // 2026
+    </div>
+</div>
+
+</body>
+</html>

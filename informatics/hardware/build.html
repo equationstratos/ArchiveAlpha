@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha - Hardware Engineering: PC Build</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #00d4ff; --accent-secondary: #ff8c00; --code-bg: #000; }
+        body { 
+            background-color: var(--bg); color: #ccc; 
+            font-family: 'Inter', sans-serif; line-height: 1.6; padding: 20px;
+        }
+        .container { max-width: 900px; background: var(--card-bg); padding: 40px; border-radius: 8px; border: 1px solid #222; }
+        .header-mini { border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
+        .status { font-size: 0.6rem; color: var(--accent); font-weight: 700; text-transform: uppercase; border: 1px solid var(--accent); padding: 2px 8px; border-radius: 3px; letter-spacing: 1px; }
+        
+        h1 { color: #fff; font-weight: 900; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { color: var(--accent); font-size: 1.1rem; text-transform: uppercase; margin-top: 35px; font-weight: 800; letter-spacing: 1px; border-left: 3px solid var(--accent-secondary); padding-left: 15px; }
+        h3 { color: #fff; font-size: 1rem; margin-top: 20px; font-weight: 700; }
+
+        .content-block { background: #0f0f0f; border: 1px solid #222; padding: 20px; border-radius: 6px; margin-bottom: 20px; }
+        .component-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px; }
+        .step-box { border-left: 2px solid #333; padding-left: 20px; margin-bottom: 25px; position: relative; }
+        .step-number { position: absolute; left: -10px; top: 0; background: var(--bg); color: var(--accent); font-weight: 900; font-size: 0.8rem; padding: 0 5px; }
+        
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        strong { color: #fff; }
+        
+        .back-btn { color: #555; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+        .back-btn:hover { color: var(--accent); }
+        .footer-note { font-size: 0.7rem; color: #444; text-align: center; margin-top: 40px; text-transform: uppercase; }
+        .hw-tag { font-size: 0.65rem; background: #1a1a1a; padding: 3px 8px; border-radius: 4px; border: 1px solid #333; color: var(--accent); font-weight: bold; margin-bottom: 10px; display: inline-block; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-mini">
+        <a href="../index.html" class="back-btn">← Retour Index</a>
+        <span class="status">Protocol: Hardware_Assembly_v1.1</span>
+    </div>
+
+    <h1>💻 Comment créer un ordinateur (PC) ?</h1>
+    <p>Créer un ordinateur à partir de zéro implique plusieurs étapes complexes, et cela ne signifie pas forcément fabriquer chaque composant de l'ordinateur (comme les processeurs ou la mémoire). Cependant, tu peux assembler un ordinateur en choisissant les bons composants et en les assemblant pour créer une machine fonctionnelle. Voici un guide pour t'aider à assembler un PC de bureau.</p>
+
+    <h2>1. Choisir les composants de base</h2>
+    <div class="content-block">
+        <p>Un ordinateur de bureau est composé de plusieurs composants clés. Voici les principaux éléments dont tu auras besoin :</p>
+        
+        <h3>a. Boîtier (châssis)</h3>
+        <p>Le boîtier est la structure qui contient tous les composants internes de l'ordinateur. Il existe différents types de boîtiers (tour, mini-tour, etc.). Choisis un boîtier adapté à la taille des autres composants (carte mère, carte graphique, etc.) et à tes besoins en matière de refroidissement.</p>
+
+        <h3>b. Carte mère (Motherboard)</h3>
+        <p>La carte mère est le composant central qui connecte tous les autres éléments de l'ordinateur (processeur, RAM, carte graphique, etc.). Il existe plusieurs types de cartes mères, comme les ATX, Micro ATX, et Mini ITX. Vérifie la compatibilité de la carte mère avec ton processeur et les autres composants.</p>
+        
+
+        <h3>c. Processeur (CPU)</h3>
+        <p>Le processeur est le "cerveau" de l'ordinateur, responsable de l'exécution des instructions et des calculs. Il existe principalement deux fabricants de processeurs : Intel et AMD. Lorsque tu choisis un processeur, assure-toi qu'il est compatible avec le socket de la carte mère.</p>
+
+        <h3>d. Mémoire vive (RAM)</h3>
+        <p>La RAM (mémoire à accès aléatoire) permet au processeur d'accéder rapidement aux données. Plus tu as de RAM, plus ton ordinateur peut exécuter de tâches en même temps sans ralentir. Vérifie la capacité et la fréquence de la RAM en fonction de tes besoins (8 Go, 16 Go, ou plus pour des usages gourmands en ressources).</p>
+
+        <h3>e. Carte graphique (GPU)</h3>
+        <p>La carte graphique est responsable de l'affichage des images sur ton écran. Si tu prévois d'utiliser ton ordinateur pour des jeux ou des applications de design graphique, tu devras choisir une carte graphique dédiée (NVIDIA ou AMD). Sinon, la carte graphique intégrée au processeur peut suffire pour des usages basiques.</p>
+
+        <h3>f. Stockage (Disque dur ou SSD)</h3>
+        <p>Le stockage de données peut se faire via un disque dur classique (HDD) ou un disque SSD plus rapide (Solid-State Drive). Le SSD est fortement recommandé pour un meilleur rendement, surtout si tu veux des démarrages rapides et des chargements d'applications fluides. Les SSD peuvent être plus chers, mais ils offrent de meilleures performances.</p>
+
+        <h3>g. Alimentation (PSU)</h3>
+        <p>L'alimentation fournit l'énergie nécessaire pour faire fonctionner tous les composants de l'ordinateur. Choisis une alimentation avec une puissance suffisante (exprimée en watts, par exemple 500W, 650W, etc.) pour alimenter tous tes composants. Vérifie que l'alimentation dispose des bonnes connecteurs pour la carte mère et les autres composants.</p>
+
+        <h3>h. Système de refroidissement</h3>
+        <p>Les composants d'un ordinateur génèrent de la chaleur. Tu auras besoin de ventilateurs pour garder ton ordinateur au frais. Les boîtiers viennent souvent avec des ventilateurs intégrés, mais tu peux ajouter des ventilateurs supplémentaires ou même un système de refroidissement liquide pour des performances optimales, notamment si tu as une carte graphique puissante ou un processeur haut de gamme.</p>
+
+        <h3>i. Périphériques</h3>
+        <p>Les périphériques sont des éléments externes à l'ordinateur, comme : <strong>Clavier, Souris, Écran, Haut-parleurs, Webcam</strong>. Tu n'as pas besoin de les assembler dans le boîtier, mais tu devras les connecter à ton ordinateur une fois qu'il est prêt à l'emploi.</p>
+    </div>
+
+    <h2>2. Assembler l'ordinateur</h2>
+    <div class="content-block">
+        <div class="step-box"><span class="step-number">01</span><strong>Préparer l'espace et les outils :</strong> Prépare un espace de travail propre et bien éclairé. Tu auras besoin de quelques outils comme un tournevis cruciforme pour fixer les vis. Pense à porter un bracelet antistatique pour éviter d'endommager tes composants électroniques.</div>
+        
+        <div class="step-box"><span class="step-number">02</span><strong>Installer la carte mère :</strong> Place la carte mère dans le boîtier. Aligne-la avec les supports pour vis dans le boîtier. Fixe la carte mère avec les vis.</div>
+        
+        <div class="step-box"><span class="step-number">03</span><strong>Installer le processeur (CPU) :</strong> Ouvre le socket du processeur sur la carte mère. Place délicatement le processeur dans le socket, en respectant l'alignement des broches (repère flèche). Abaisse le levier pour sécuriser le processeur.</div>
+        
+
+        <div class="step-box"><span class="step-number">04</span><strong>Ajouter la RAM :</strong> Aligne les modules de RAM avec les slots sur la carte mère. Insère les modules et appuie fermement jusqu'à ce qu'ils s'enclenchent.</div>
+        
+        <div class="step-box"><span class="step-number">05</span><strong>Installer la carte graphique :</strong> Si tu utilises une carte graphique dédiée, insère-la dans un slot PCIe x16 sur la carte mère. Fixe la carte graphique avec une vis au boîtier.</div>
+        
+        <div class="step-box"><span class="step-number">06</span><strong>Installer le stockage :</strong> Fixe le disque dur ou SSD dans les baies prévues. Connecte le câble SATA (HDD/SSD) ou le connecteur M.2 (NVMe) à la carte mère.</div>
+        
+        <div class="step-box"><span class="step-number">07</span><strong>Installer l'alimentation (PSU) :</strong> Place l'alimentation dans son emplacement. Fixe-la avec des vis et connecte les câbles nécessaires à la carte mère, au GPU et au stockage.</div>
+        
+        <div class="step-box"><span class="step-number">08</span><strong>Câblage & Vérification :</strong> Connecte les câbles de ventilation. Vérifie que tous les câbles sont correctement connectés et bien organisés pour un bon flux d'air.</div>
+    </div>
+
+    <h2>3. Démarrer l'ordinateur</h2>
+    <div class="content-block">
+        <ul>
+            <li><strong>Étape 1 : Vérifier l'assemblage.</strong> Vérifie une dernière fois l'installation de tous les composants.</li>
+            <li><strong>Étape 2 : Allumer l'ordinateur.</strong> Branche-le et allume-le. Si tout est correct, tu devrais voir l'écran du BIOS/UEFI.</li>
+            <li><strong>Étape 3 : Installer un système d'exploitation.</strong> Insère une clé USB avec Windows, Linux ou macOS (si compatible) et démarre dessus pour procéder à l'installation.</li>
+        </ul>
+    </div>
+
+    <h2>4. Configurer l'ordinateur</h2>
+    <div class="content-block">
+        <ul>
+            <li>Installer les pilotes nécessaires (carte graphique, carte mère, etc.).</li>
+            <li>Configurer les paramètres de sécurité.</li>
+            <li>Installer tes applications et tes programmes favoris.</li>
+        </ul>
+    </div>
+
+    <h2 style="border-left: 3px solid #fff;">Conclusion</h2>
+    <p>Assembler un ordinateur n'est pas aussi difficile qu'il n'y paraît. En choisissant des composants compatibles et en suivant les étapes d'assemblage, tu peux créer un PC parfaitement fonctionnel et personnalisé. Une fois terminé, tu seras fier de ton propre ordinateur ! 😄</p>
+
+    <div class="footer-note">
+        ALPHA_ARCHIVE // SECTION_HARDWARE // 2026
+    </div>
+</div>
+
+</body>
+</html>

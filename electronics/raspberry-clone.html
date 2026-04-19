@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha - Raspberry Pi Engineering</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #e91e63; --accent-secondary: #00cec9; --code-bg: #000; }
+        body { 
+            background-color: var(--bg); color: #ccc; 
+            font-family: 'Inter', sans-serif; line-height: 1.6; padding: 20px;
+        }
+        .container { max-width: 900px; background: var(--card-bg); padding: 40px; border-radius: 8px; border: 1px solid #222; }
+        .header-mini { border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
+        .status { font-size: 0.6rem; color: var(--accent); font-weight: 700; text-transform: uppercase; border: 1px solid var(--accent); padding: 2px 8px; border-radius: 3px; letter-spacing: 1px; }
+        
+        h1 { color: #fff; font-weight: 900; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { color: var(--accent); font-size: 1.1rem; text-transform: uppercase; margin-top: 35px; font-weight: 800; letter-spacing: 1px; border-left: 3px solid var(--accent-secondary); padding-left: 15px; }
+        h3 { color: #fff; font-size: 1rem; margin-top: 20px; font-weight: 700; }
+        .content-block { background: #0f0f0f; border: 1px solid #222; padding: 20px; border-radius: 6px; margin-bottom: 20px; }
+        
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        strong { color: #fff; }
+        
+        .back-btn { color: #555; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+        .back-btn:hover { color: var(--accent); }
+        .footer-note { font-size: 0.7rem; color: #444; text-align: center; margin-top: 40px; text-transform: uppercase; }
+        .warning-tag { font-size: 0.65rem; background: #2c0b0e; padding: 3px 8px; border-radius: 4px; border: 1px solid #5a1016; color: #ff4d4d; font-weight: bold; margin-bottom: 10px; display: inline-block; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-mini">
+        <a href="index.html" class="back-btn">← Retour Index</a>
+        <span class="status">Module: SBC_Architecture_v1.0</span>
+    </div>
+
+    <h1>🍓 Créer un Raspberry Pi (ou clone)</h1>
+    <p>Créer un Raspberry Pi à partir de zéro est un défi beaucoup plus complexe qu'avec une carte Arduino, car un Raspberry Pi est en réalité un ordinateur à part entière. Faire un Raspberry Pi soi-même dans son intégralité à la maison est difficile, mais il est possible de construire un clone ou une version simplifiée.</p>
+
+    <h2>1. Qu'est-ce qu'un Raspberry Pi ?</h2>
+    <div class="content-block">
+        <p>Le Raspberry Pi est une carte mère équipée des éléments suivants :</p>
+        <ul>
+            <li><strong>Processeur ARM :</strong> Le cœur du système.</li>
+            <li><strong>Mémoire RAM :</strong> Intégrée à la carte.</li>
+            <li><strong>Interfaces :</strong> Ports USB, sortie HDMI, processeur graphique (GPU).</li>
+            <li><strong>GPIO :</strong> Pins pour entrées/sorties numériques.</li>
+            <li><strong>Connectivité :</strong> Wi-Fi, Bluetooth, Ethernet.</li>
+        </ul>
+        <p>Il tourne sur un système d'exploitation Linux (généralement Raspberry Pi OS) et permet de gérer des serveurs, de la robotique ou des applications bureautiques.</p>
+        
+    </div>
+
+    <h2>2. Comment assembler un Raspberry Pi "fait maison" ?</h2>
+    <div class="content-block">
+        <span class="warning-tag">COMPLEXITÉ ÉLEVÉE</span>
+        <p>Pour créer un clone, vous aurez besoin de ces composants de base :</p>
+        <ul>
+            <li><strong>Microprocesseur ARM :</strong> De type Broadcom BCM2837 ou similaire.</li>
+            <li><strong>Mémoire (RAM) :</strong> Circuit DRAM compatible à intégrer.</li>
+            <li><strong>Stockage :</strong> Carte microSD (via lecteur intégré) ou eMMC.</li>
+            <li><strong>Vidéo :</strong> Processeur graphique supportant le HDMI.</li>
+            <li><strong>Ports USB & Réseau :</strong> Conception d'un hub USB et intégration de modules Ethernet/Wi-Fi.</li>
+            <li><strong>GPIO :</strong> Connecteur de 40 broches pour périphériques.</li>
+            <li><strong>Alimentation & Refroidissement :</strong> Régulateur de tension (USB-C) et radiateurs/ventilateurs.</li>
+        </ul>
+
+        <h3>Assemblage technique</h3>
+        <ol>
+            <li><strong>Créer la carte mère :</strong> Concevoir le PCB et positionner les composants. Nécessite des connaissances avancées en conception de PCB.</li>
+            <li><strong>Souder les composants :</strong> Soudure de précision du processeur, de la RAM et des ports.</li>
+            <li><strong>Système d'exploitation :</strong> Portage d'un noyau Linux adapté aux microprocesseurs ARM.</li>
+        </ol>
+    </div>
+
+    <h2>3. Alternative : Projet avec microcontrôleur</h2>
+    <div class="content-block">
+        <p>Pour un projet plus simple et accessible (DIY), utilisez des microcontrôleurs puissants :</p>
+        <h3>Exemple avec ESP32 :</h3>
+        <ul>
+            <li><strong>Capacités :</strong> Wi-Fi et Bluetooth intégrés, bonne puissance de calcul pour l'IoT.</li>
+            <li><strong>Étapes :</strong> Choisir une carte type NodeMCU, ajouter des capteurs/écrans, et programmer via l'IDE Arduino ou PlatformIO.</li>
+        </ul>
+        
+    </div>
+
+    <h2 style="border-left: 3px solid #fff;">Conclusion</h2>
+    <p>Créer un Raspberry Pi complet est un défi industriel. Pour l'apprentissage et les projets personnels, la construction de clones basés sur l'ESP32 ou l'ESP8266 est une approche bien plus réaliste et gratifiante. 🎯</p>
+
+    <div class="footer-note">
+        ALPHA_ARCHIVE // SECTION_COMPUTING // 2026
+    </div>
+</div>
+
+</body>
+</html>

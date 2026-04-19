@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module Feu - Archive Alpha</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #e74c3c; } /* Accent Rouge pour le Feu */
+        body { 
+            background-color: var(--bg); color: #e0e0e0; 
+            font-family: 'Inter', sans-serif; overflow: hidden;
+            height: 100vh; display: flex; flex-direction: column;
+        }
+        
+        .header { padding: 10px 20px; border-bottom: 1px solid #222; background: #0f0f0f; }
+        .search-bar { 
+            background: #1a1a1a; border: 1px solid #333; color: white; 
+            border-radius: 6px; padding: 6px 15px; width: 300px; outline: none; font-size: 0.9rem;
+        }
+
+        .tab-content { flex-grow: 1; padding: 20px; overflow-y: auto; }
+        
+        .card { 
+            background-color: var(--card-bg) !important; border: 1px solid #222 !important;
+            transition: all 0.1s ease; min-height: 100px; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            border-radius: 6px; padding: 10px !important;
+        }
+        .card:hover { transform: scale(1.03); border-color: var(--accent) !important; background: #1c1c1c !important; }
+        
+        .title { 
+            font-size: 0.65rem; font-weight: 700; margin-top: 8px; 
+            text-transform: uppercase; color: #888; text-align: center;
+        }
+        .emoji-box { font-size: 1.5rem; }
+        a { text-decoration: none !important; }
+        .back-btn { color: #555; font-size: 0.7rem; font-weight: 900; text-decoration: none; text-transform: uppercase; }
+        .back-btn:hover { color: var(--accent); }
+    </style>
+</head>
+<body>
+
+<div class="header d-flex justify-content-between align-items-center">
+    <div>
+        <a href="../index.html" class="back-btn">← Archive_Main</a>
+        <div style="font-weight: 900; letter-spacing: 2px; font-size: 0.8rem; color: var(--accent); margin-top: 2px;">MODULE_FEU_V1</div>
+    </div>
+    <input type="text" id="searchInput" class="search-bar" placeholder="Rechercher une technique..." autocomplete="off" />
+</div>
+
+<div class="tab-content">
+    <div class="row g-3">
+        <!-- Lien vers la fiche principale que nous avons créée -->
+        <div class="col-4 col-md-3 col-lg-2">
+            <a href="./techniques_feu.html">
+                <div class="card card-body">
+                    <span class="emoji-box">🔥</span>
+                    <h6 class="title">Techniques Générales</h6>
+                </div>
+            </a>
+        </div>
+
+        <!-- Emplacements pour futures fiches spécifiques ou fichiers html séparés -->
+        <div class="col-4 col-md-3 col-lg-2">
+            <a href="./allume_feu.html">
+                <div class="card card-body">
+                    <span class="emoji-box">🪵</span>
+                    <h6 class="title">Allumes feu</h6>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-4 col-md-3 col-lg-2">
+            <a href="./torche.html">
+                <div class="card card-body">
+                    <span class="emoji-box">🔥</span>
+                    <h6 class="title">Torche</h6>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    document.getElementById('searchInput').addEventListener('input', function() {
+        let filter = this.value.toLowerCase();
+        let cards = document.querySelectorAll('.col-4, .col-md-3, .col-lg-2');
+        
+        cards.forEach(card => {
+            let title = card.querySelector('.title').innerText.toLowerCase();
+            if (title.includes(filter)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

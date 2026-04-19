@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha - Firmware Flashing Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #00d4ff; --accent-secondary: #00cec9; --code-bg: #000; }
+        body { 
+            background-color: var(--bg); color: #ccc; 
+            font-family: 'Inter', sans-serif; line-height: 1.6; padding: 20px;
+        }
+        .container { max-width: 900px; background: var(--card-bg); padding: 40px; border-radius: 8px; border: 1px solid #222; }
+        .header-mini { border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
+        .status { font-size: 0.6rem; color: var(--accent); font-weight: 700; text-transform: uppercase; border: 1px solid var(--accent); padding: 2px 8px; border-radius: 3px; letter-spacing: 1px; }
+        
+        h1 { color: #fff; font-weight: 900; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { color: var(--accent); font-size: 1.1rem; text-transform: uppercase; margin-top: 35px; font-weight: 800; letter-spacing: 1px; border-left: 3px solid var(--accent-secondary); padding-left: 15px; }
+        h3 { color: #fff; font-size: 1rem; margin-top: 20px; font-weight: 700; }
+        .content-block { background: #0f0f0f; border: 1px solid #222; padding: 20px; border-radius: 6px; margin-bottom: 20px; }
+        .code-snippet { background: var(--code-bg); padding: 15px; border-radius: 4px; border-left: 3px solid var(--accent); font-family: 'Consolas', monospace; color: #e0e0e0; margin: 15px 0; font-size: 0.85rem; position: relative; white-space: pre-wrap; }
+        
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        strong { color: #fff; }
+        
+        .back-btn { color: #555; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+        .back-btn:hover { color: var(--accent); }
+        .footer-note { font-size: 0.7rem; color: #444; text-align: center; margin-top: 40px; text-transform: uppercase; }
+        .tech-tag { font-size: 0.65rem; background: #1a1a1a; padding: 3px 8px; border-radius: 4px; border: 1px solid #333; color: var(--accent-secondary); font-weight: bold; margin-bottom: 10px; display: inline-block; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-mini">
+        <a href="index.html" class="back-btn">← Retour Index</a>
+        <span class="status">Module: Firmware_Deployment_v1.0</span>
+    </div>
+
+    <h1>⚡ Flasher une carte électronique</h1>
+    <p>Flasher une carte électronique, c'est le processus de télécharger un firmware ou un programme sur un microcontrôleur ou un autre type de circuit intégré (Arduino, ESP32, ESP8266, etc.). Cela permet à la carte d'exécuter le code que tu as écrit ou téléchargé.</p>
+
+    <h2>1. Préparer ton matériel</h2>
+    <div class="content-block">
+        <p>Avant de commencer, assure-toi d'avoir les éléments nécessaires :</p>
+        <ul>
+            <li><strong>La carte électronique :</strong> Arduino, ESP32, ESP8266, Raspberry Pi, etc.</li>
+            <li><strong>Un câble USB :</strong> Ou un autre type de connexion pour relier la carte à l'ordinateur.</li>
+            <li><strong>Un programmeur :</strong> Si nécessaire (ex: USBasp pour microcontrôleur ATmega).</li>
+            <li><strong>Logiciel de programmation :</strong> Arduino IDE, PlatformIO, esphome, etc.</li>
+            <li><strong>Le firmware :</strong> Fichier <code>.bin</code> (binaire) ou <code>.hex</code> (hexadécimal).</li>
+        </ul>
+        
+    </div>
+
+    <h2>2. Installer les outils nécessaires</h2>
+    <div class="content-block">
+        <ul>
+            <li><strong>Arduino IDE :</strong> Télécharge l'IDE officiel. Pour ESP32/ESP8266, ajoute les URLs correspondantes dans <em>Fichier > Préférences > Gestionnaire de cartes supplémentaires</em>.</li>
+            <li><strong>PlatformIO :</strong> Environnement avancé souvent utilisé avec VS Code.</li>
+            <li><strong>ESPHome :</strong> Spécifique aux cartes ESP, idéal pour la domotique.</li>
+        </ul>
+    </div>
+
+    <h2>3. Connecter la carte à l'ordinateur</h2>
+    <div class="content-block">
+        <ul>
+            <li><strong>Via USB :</strong> Méthode la plus courante. La carte doit être reconnue automatiquement par l'IDE.</li>
+            <li><strong>Via un programmateur externe :</strong> Nécessaire pour les cartes sans connectivité USB intégrée ou microcontrôleurs spécifiques.</li>
+        </ul>
+        
+    </div>
+
+    <h2>4. Sélectionner la carte et le port</h2>
+    <div class="content-block">
+        <p>Dans ton IDE, spécifie les paramètres suivants :</p>
+        <ul>
+            <li><strong>Le modèle de la carte :</strong> Menu <em>Outils > Type de carte</em>.</li>
+            <li><strong>Le port de communication :</strong> Menu <em>Outils > Port</em>.</li>
+            <li><strong>Le programmateur :</strong> Si externe, sélectionne-le dans <em>Outils > Programmateur</em>.</li>
+        </ul>
+    </div>
+
+    <h2>5. Choisir et préparer le firmware</h2>
+    <div class="content-block">
+        <p>Le firmware est généralement un fichier compilé à partir du code source.</p>
+        <ul>
+            <li><strong>Arduino IDE :</strong> Écris ton code et clique sur "Téléverser" pour compiler et envoyer simultanément.</li>
+            <li><strong>Outils spécifiques :</strong> Utilise <em>esphome</em> ou <em>Espressif Flash Tool</em> pour charger des fichiers <code>.bin</code> existants.</li>
+        </ul>
+    </div>
+
+    <h2>6. Flasher la carte</h2>
+    <div class="content-block">
+        <h3>Méthodes de flashage :</h3>
+        <ul>
+            <li><strong>Via Arduino IDE :</strong> Cliquez sur le bouton "Téléverser". L'IDE compile et envoie le code via USB.</li>
+            <li><strong>Via programmateur externe :</strong> Connecte-le via les broches SPI/ICSP. Utilise <em>Graver le bootloader</em> si nécessaire avant de téléverser.</li>
+            <li><strong>Via ligne de commande (ex: ESP32) :</strong></li>
+        </ul>
+        <div class="code-snippet">esphomeflasher --port /dev/ttyUSB0 your_firmware.bin</div>
+    </div>
+
+    <h2>7. Vérifier le bon fonctionnement</h2>
+    <div class="content-block">
+        <ul>
+            <li>Utilise le <strong>moniteur série</strong> dans l'IDE pour voir les messages de diagnostic.</li>
+            <li>Vérifie les réactions physiques (LEDs, écrans).</li>
+        </ul>
+        
+    </div>
+
+    <h2 style="border-left: 3px solid #fff;">Conseils & Problèmes</h2>
+    <div class="content-block">
+        <ul>
+            <li><strong>Mode Programmation :</strong> Certaines cartes (ESP32) nécessitent de maintenir le bouton "Boot" pendant le flashage.</li>
+            <li><strong>Pilotes :</strong> Vérifie que les drivers USB (CH340, CP2102) sont installés sur ton OS.</li>
+        </ul>
+    </div>
+
+    <h2 style="border-left: 3px solid #fff;">Conclusion</h2>
+    <p>Flasher une carte est une étape cruciale pour donner vie à tes projets. En maîtrisant les outils de transfert, tu transformes un simple circuit en un objet intelligent capable d'exécuter tes instructions complexes. 🎯</p>
+
+    <div class="footer-note">
+        ALPHA_ARCHIVE // SECTION_ELECTRONICS // 2026
+    </div>
+</div>
+
+</body>
+</html>

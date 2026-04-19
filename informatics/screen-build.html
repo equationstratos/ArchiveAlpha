@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha - Display Engineering & Technology</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #00d4ff; --accent-secondary: #ff8c00; --code-bg: #000; }
+        body { 
+            background-color: var(--bg); color: #ccc; 
+            font-family: 'Inter', sans-serif; line-height: 1.6; padding: 20px;
+        }
+        .container { max-width: 900px; background: var(--card-bg); padding: 40px; border-radius: 8px; border: 1px solid #222; }
+        .header-mini { border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
+        .status { font-size: 0.6rem; color: var(--accent); font-weight: 700; text-transform: uppercase; border: 1px solid var(--accent); padding: 2px 8px; border-radius: 3px; letter-spacing: 1px; }
+        
+        h1 { color: #fff; font-weight: 900; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { color: var(--accent); font-size: 1.1rem; text-transform: uppercase; margin-top: 35px; font-weight: 800; letter-spacing: 1px; border-left: 3px solid var(--accent-secondary); padding-left: 15px; }
+        h3 { color: #fff; font-size: 1rem; margin-top: 20px; font-weight: 700; }
+
+        .content-block { background: #0f0f0f; border: 1px solid #222; padding: 20px; border-radius: 6px; margin-bottom: 20px; }
+        .warning-block { border: 1px solid #444; background: rgba(255, 140, 0, 0.05); color: #aaa; padding: 15px; border-radius: 6px; margin-bottom: 20px; font-style: italic; font-size: 0.9rem; }
+        
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        strong { color: #fff; }
+        
+        .back-btn { color: #555; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; transition: 0.2s; }
+        .back-btn:hover { color: var(--accent); }
+        .footer-note { font-size: 0.7rem; color: #444; text-align: center; margin-top: 40px; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-mini">
+        <a href="index.html" class="back-btn">← Retour Index</a>
+        <span class="status">Protocol: Display_Theory_v1.0</span>
+    </div>
+
+    <h1>🖥️ Comment créer un écran d'ordinateur ?</h1>
+    <div class="warning-block">
+        Créer un écran d'ordinateur à partir de zéro est un projet très complexe, car cela nécessite des compétences avancées en électronique, en ingénierie et en fabrication de composants. L'idée de créer un écran complet à la maison est irréaliste sans l'accès à des équipements industriels spécialisés, mais voici comment cela fonctionne en théorie.
+    </div>
+
+    <h2>1. Composants nécessaires</h2>
+    <div class="content-block">
+        <ul>
+            <li><strong>Panneau d'affichage (LCD, OLED, LED, etc.) :</strong> Le cœur de l'écran qui affiche les pixels.</li>
+            <li><strong>Carte de contrôle d'affichage :</strong> Circuit convertissant les données vidéo en signaux d'affichage.</li>
+            <li><strong>Rétroéclairage (pour LCD) :</strong> Source lumineuse indispensable car les cristaux liquides n'en produisent pas.</li>
+            <li><strong>Connecteurs et câblage :</strong> Interfaces pour relier la source vidéo (HDMI, DisplayPort).</li>
+            <li><strong>Boîtier :</strong> Châssis de maintien des composants.</li>
+            <li><strong>Alimentation :</strong> Énergie pour le rétroéclairage et le traitement des données.</li>
+        </ul>
+    </div>
+
+    <h2>2. Fabrication : Les Étapes Théoriques</h2>
+    
+    <h3>Étape 1 : Choisir la technologie de l'écran</h3>
+    <div class="content-block">
+        <ul>
+            <li><strong>LCD (Liquid Crystal Display) :</strong> Utilise des cristaux liquides contrôlés par des champs électriques. Nécessite un rétroéclairage LED.</li>
+            <li><strong>OLED (Organic Light Emitting Diodes) :</strong> Chaque pixel produit sa propre lumière. Plus fin et efficace.</li>
+            <li><strong>LED :</strong> Type de LCD où le rétroéclairage utilise spécifiquement des diodes électroluminescentes.</li>
+        </ul>
+    </div>
+
+    <h3>Étape 2 : Fabriquer le panneau d'affichage</h3>
+    
+
+[Image of cross-section of a liquid crystal display LCD]
+
+    <div class="content-block">
+        <ul>
+            <li><strong>Sous-couches :</strong> La couche de cristaux liquides est ajustée électriquement pour laisser passer la lumière.</li>
+            <li><strong>Plaques de verre :</strong> Plaques ultra-fines contenant les cristaux et les filtres polarisants.</li>
+            <li><strong>Rétroéclairage :</strong> Placement des LED derrière les couches pour rendre l'image visible.</li>
+        </ul>
+    </div>
+
+    <h3>Étape 3 : Conception du circuit de contrôle</h3>
+    <div class="content-block">
+        <ul>
+            <li><strong>Carte de commande vidéo :</strong> Interface gérant le signal HDMI/DisplayPort.</li>
+            <li><strong>Pilotes de pixels :</strong> Circuits envoyant les impulsions précises à chaque pixel individuel.</li>
+        </ul>
+    </div>
+
+    <h3>Étape 4 : Assemblage et Installation</h3>
+    <div class="content-block">
+        <p>L'assemblage implique de superposer les couches de verre, d'installer les circuits et de monter le tout dans un boîtier robuste incluant les connecteurs (HDMI, VGA, etc.) et le système de refroidissement si nécessaire.</p>
+    </div>
+
+    <h2>3. Tester l'écran</h2>
+    <div class="content-block">
+        <ul>
+            <li><strong>Tests d'affichage :</strong> Netteté de l'image et précision des couleurs.</li>
+            <li><strong>Test de rétroéclairage :</strong> Vérification de l'uniformité de la lumière.</li>
+            <li><strong>Test des entrées :</strong> Validation de la réception des signaux via différentes sources.</li>
+        </ul>
+    </div>
+
+    <h2>4. Fabrication domestique : Réalité vs DIY</h2>
+    <div class="content-block">
+        <p>Fabriquer un panneau LCD/OLED à la maison est <strong>irréaliste</strong>. Cependant, il est possible de réaliser des projets <strong>DIY</strong> en assemblant des composants préfabriqués (panneau de remplacement + carte contrôleur générique). C'est une excellente approche pour expérimenter avec des systèmes comme le Raspberry Pi.</p>
+    </div>
+
+    <h2 style="border-left: 3px solid #fff;">Conclusion</h2>
+    <p>La fabrication d'un écran à partir de zéro est un défi industriel mené en usines spécialisées. Pour un usage personnel, l'utilisation de composants existants permet d'apprendre les bases de l'électronique d'affichage tout en obtenant un résultat fonctionnel. 🎯</p>
+
+    <div class="footer-note">
+        ALPHA_ARCHIVE // SECTION_HARDWARE_TECH // 2026
+    </div>
+</div>
+
+</body>
+</html>

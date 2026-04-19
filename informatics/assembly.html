@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha - Low Level Programming</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #121212; --accent: #00ff41; --code-bg: #000; }
+        body { 
+            background-color: var(--bg); color: #aaa; 
+            font-family: 'Consolas', 'Monaco', monospace; line-height: 1.5; padding: 20px;
+        }
+        .container { max-width: 950px; background: var(--card-bg); padding: 40px; border-radius: 4px; border: 1px solid #222; box-shadow: 0 0 20px rgba(0,255,65,0.05); }
+        .header-mini { border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
+        .status { font-size: 0.65rem; color: var(--accent); font-weight: 700; text-transform: uppercase; border: 1px solid var(--accent); padding: 2px 10px; border-radius: 2px; letter-spacing: 2px; }
+        
+        h1 { color: #fff; font-weight: 900; font-size: 1.6rem; text-transform: uppercase; letter-spacing: 3px; }
+        h2 { color: var(--accent); font-size: 1rem; text-transform: uppercase; margin-top: 40px; font-weight: 800; letter-spacing: 1px; padding-bottom: 5px; border-bottom: 1px solid #222; }
+        h3 { color: #eee; font-size: 0.9rem; margin-top: 25px; font-weight: 700; text-transform: uppercase; }
+
+        .content-block { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 20px; border-radius: 4px; margin-bottom: 20px; border-left: 2px solid #333; }
+        .code-snippet { background: var(--code-bg); padding: 15px; border: 1px solid #222; color: var(--accent); font-size: 0.85rem; margin: 15px 0; overflow-x: auto; white-space: pre; border-left: 3px solid var(--accent); }
+        
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        strong { color: #fff; }
+        em { color: var(--accent); font-style: normal; }
+        
+        .back-btn { color: #444; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+        .back-btn:hover { color: var(--accent); }
+        .footer-note { font-size: 0.65rem; color: #333; text-align: center; margin-top: 50px; letter-spacing: 4px; }
+        .label { color: #555; font-size: 0.7rem; margin-right: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-mini">
+        <a href="index.html" class="back-btn">[ DIR: /ROOT/TECH/ASM ]</a>
+        <span class="status">SYSTEM_ARCH: x86_64</span>
+    </div>
+
+    <h1>🖥️ Langage Assembleur (ASM)</h1>
+    <p>Le langage assembleur est un langage de bas niveau, spécifique à chaque architecture de processeur (x86, ARM, MIPS). Il offre un contrôle absolu sur le matériel, crucial pour l'embarqué, la rétro-ingénierie et l'optimisation extrême.</p>
+
+    <h2>01. Pré-requis Système</h2>
+    <div class="content-block">
+        <ul>
+            <li><strong>Architecture :</strong> Compréhension du jeu d'instructions cible (x86 vs ARM).</li>
+            <li><strong>Assembleur :</strong> Outil de traduction (ex: <em>NASM</em> pour Windows/Linux, <em>as</em> pour GNU).</li>
+            <li><strong>Débogueur :</strong> Outil d'analyse d'exécution (ex: <em>GDB</em>).</li>
+        </ul>
+    </div>
+
+    <h2>02. Installation (NASM)</h2>
+    <div class="code-snippet">
+# Linux (Debian/Ubuntu)
+sudo apt update && sudo apt install nasm
+
+# Windows
+Download: https://www.nasm.us/</div>
+
+    <h2>03. Structure & Syntaxe</h2>
+    <p>Un programme ASM s'articule généralement autour de trois segments :</p>
+    <ul>
+        <li><strong>Section .data :</strong> Variables initialisées et constantes.</li>
+        <li><strong>Section .bss :</strong> Variables non-initialisées (mémoire réservée).</li>
+        <li><strong>Section .text :</strong> Code exécutable (instructions).</li>
+    </ul>
+
+    <h3>Exemple : Hello World (Linux x86 32-bit)</h3>
+    <div class="code-snippet">
+section .data
+    hello db 'Hello, World!',0  ; Chaine de caractères
+
+section .text
+    global _start
+
+_start:
+    ; --- Affichage via sys_write ---
+    mov eax, 4          ; Appel système 4 (write)
+    mov ebx, 1          ; File descriptor 1 (stdout)
+    mov ecx, hello      ; Pointeur vers le texte
+    mov edx, 13         ; Longueur
+    int 0x80            ; Interruption Kernel
+
+    ; --- Sortie via sys_exit ---
+    mov eax, 1          ; Appel système 1 (exit)
+    xor ebx, ebx        ; Code de retour 0
+    int 0x80            ; Interruption Kernel</div>
+
+    <h2>04. Compilation & Liaison</h2>
+    <div class="content-block">
+        <p><span class="label">Step 1:</span> Assemblage en fichier objet (.o)</p>
+        <div class="code-snippet">nasm -f elf32 -o hello.o hello.asm</div>
+        
+        <p><span class="label">Step 2:</span> Liaison (Linker)</p>
+        <div class="code-snippet">ld -m elf_i386 -s -o hello hello.o</div>
+        
+        <p><span class="label">Step 3:</span> Exécution</p>
+        <div class="code-snippet">./hello</div>
+    </div>
+
+    <h2>05. Instructions Fondamentales</h2>
+    <div class="content-block">
+        <ul>
+            <li><strong>mov [dest], [src] :</strong> Transfert de données.</li>
+            <li><strong>add / sub :</strong> Opérations arithmétiques.</li>
+            <li><strong>cmp [v1], [v2] :</strong> Comparaison de valeurs.</li>
+            <li><strong>je / jne / jmp :</strong> Sauts conditionnels ou directs (branchements).</li>
+            <li><strong>int / syscall :</strong> Interaction avec le noyau (API système).</li>
+        </ul>
+    </div>
+
+    <h2>06. Débogage (GDB)</h2>
+    <p>Essentiel pour inspecter les registres et la pile (stack) :</p>
+    <div class="code-snippet">
+gdb ./hello
+(gdb) break _start
+(gdb) run
+(gdb) info registers
+(gdb) stepi</div>
+
+    <h2>07. Ressources Alpha</h2>
+    <div class="content-block">
+        <ul>
+            <li>Documentation officielle de <em>NASM</em>.</li>
+            <li>Ouvrage : <em>"Programming from the Ground Up"</em> (Jeff Bartlett).</li>
+            <li>Pratique : Analyse des registres sur <em>Compiler Explorer (godbolt.org)</em>.</li>
+        </ul>
+    </div>
+
+    <div class="footer-note">
+        ALPHA_ARCHIVE // SECTION_DEV_KERN // 2026
+    </div>
+</div>
+
+</body>
+</html>

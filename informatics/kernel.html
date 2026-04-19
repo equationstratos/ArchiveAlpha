@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha - OS Kernel Development</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #ff00ff; --accent-secondary: #70a1ff; --code-bg: #000; }
+        body { 
+            background-color: var(--bg); color: #ccc; 
+            font-family: 'Inter', sans-serif; line-height: 1.6; padding: 20px;
+        }
+        .container { max-width: 900px; background: var(--card-bg); padding: 40px; border-radius: 8px; border: 1px solid #222; }
+        .header-mini { border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
+        .status { font-size: 0.6rem; color: var(--accent); font-weight: 700; text-transform: uppercase; border: 1px solid var(--accent); padding: 2px 8px; border-radius: 3px; letter-spacing: 1px; }
+        
+        h1 { color: #fff; font-weight: 900; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { color: var(--accent); font-size: 1.1rem; text-transform: uppercase; margin-top: 35px; font-weight: 800; letter-spacing: 1px; border-left: 3px solid var(--accent-secondary); padding-left: 15px; }
+        h3 { color: #fff; font-size: 1rem; margin-top: 20px; font-weight: 700; }
+
+        .content-block { background: #0f0f0f; border: 1px solid #222; padding: 20px; border-radius: 6px; margin-bottom: 20px; }
+        .os-diagram { text-align: center; margin: 20px 0; border: 1px dashed #444; padding: 10px; border-radius: 4px; }
+        
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        strong { color: #fff; }
+        
+        .back-btn { color: #555; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+        .back-btn:hover { color: var(--accent); }
+        .footer-note { font-size: 0.7rem; color: #444; text-align: center; margin-top: 40px; text-transform: uppercase; }
+        .tech-tag { font-size: 0.65rem; background: #1a1a1a; padding: 3px 8px; border-radius: 4px; border: 1px solid #333; color: var(--accent); font-weight: bold; margin-bottom: 10px; display: inline-block; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-mini">
+        <a href="index.html" class="back-btn">← Retour Index</a>
+        <span class="status">Sub-Module: Kernel_Architecture_v1.0</span>
+    </div>
+
+    <h1>🖥️ Comment créer un système d'exploitation (OS) ?</h1>
+    <p>Créer un système d'exploitation (OS) à partir de zéro est un projet ambitieux, mais fascinant ! Un OS gère les ressources matérielles de l'ordinateur et permet aux programmes d'interagir avec le matériel de manière abstraite. Le processus de création d'un OS implique plusieurs étapes techniques, allant de la programmation de base en bas niveau à la gestion des systèmes de fichiers, de la mémoire, des périphériques, et bien plus encore.</p>
+
+    <h2>1. Prérequis avant de commencer</h2>
+    <div class="content-block">
+        <h3>Langages de programmation nécessaires :</h3>
+        <ul>
+            <li><strong>C et C++ :</strong> Les systèmes d'exploitation modernes sont souvent écrits en C et C++, car ces langages permettent de manipuler directement le matériel tout en étant relativement portables.</li>
+            <li><strong>Assembleur (Assembly) :</strong> Essentiel pour les parties les plus proches du matériel, comme le démarrage du système et l'initialisation du processeur.</li>
+            <li>Python ou Rust peuvent également être utilisés pour des parties spécifiques ou des scripts.</li>
+        </ul>
+
+        <h3>Connaissances nécessaires :</h3>
+        <ul>
+            <li><strong>Architecture des ordinateurs :</strong> Comprendre le fonctionnement du processeur (CPU), de la mémoire (RAM) et des périphériques.</li>
+            <li><strong>Systèmes de fichiers :</strong> Stockage, récupération et gestion des données.</li>
+            <li><strong>Gestion de la mémoire :</strong> Allocation et protection de la RAM.</li>
+            <li><strong>Entrée/Sortie (E/S) :</strong> Interaction avec les claviers, écrans, et disques.</li>
+        </ul>
+    </div>
+
+    <h2>2. Préparer l'environnement de développement</h2>
+    <div class="content-block">
+        <ul>
+            <li><strong>Un compilateur C/C++ :</strong> Par exemple, GCC (GNU Compiler Collection).</li>
+            <li><strong>Un assembleur :</strong> NASM est l'un des plus populaires.</li>
+            <li><strong>Un émulateur :</strong> QEMU ou Bochs pour tester sans matériel réel.</li>
+            <li><strong>Un éditeur de texte :</strong> VSCode, Vim, ou Emacs.</li>
+            <li><strong>Gestionnaire de version :</strong> Git pour le suivi du code.</li>
+        </ul>
+    </div>
+
+    <h2>3. Créer un noyau (kernel)</h2>
+    <div class="os-diagram">
+        
+    </div>
+    <div class="content-block">
+        <p>Le noyau est la partie la plus fondamentale de l'OS. Il gère les ressources matérielles et les interactions matériel/logiciel.</p>
+
+        <h3>Étape 1 : Initialisation du noyau</h3>
+        <p>Le noyau commence par un processus appelé <strong>bootloader</strong> (ex: GRUB). Il charge le noyau en mémoire vive (RAM) au démarrage.</p>
+
+        <h3>Étape 2 : Gestion de la mémoire</h3>
+        <ul>
+            <li>Initialisation de la pile (stack) et du tas (heap).</li>
+            <li>Gestion de la mémoire virtuelle et pagination (paging).</li>
+            <li>Allocation de mémoire pour les processus.</li>
+        </ul>
+
+        <h3>Étape 3 : Création de processus et gestion des tâches</h3>
+        <p>Le noyau gère les processus via un <strong>ordonnanceur</strong> (scheduler), responsable de répartir le temps processeur selon les priorités.</p>
+
+        <h3>Étape 4 : Gestion des entrées/sorties (E/S)</h3>
+        <p>Utilisation de <strong>pilotes de périphériques (drivers)</strong> pour interagir avec le matériel physique.</p>
+    </div>
+
+    <h2>4. Ajouter des fonctionnalités de base</h2>
+    <div class="content-block">
+        <h3>Système de fichiers</h3>
+        <p>Permet d'organiser les données. Types populaires : FAT, EXT (Linux), NTFS (Windows).</p>
+
+        <h3>Interface utilisateur (UI)</h3>
+        <ul>
+            <li><strong>CLI (Ligne de commande) :</strong> Plus simple à développer (ls, mkdir).</li>
+            <li><strong>GUI (Interface graphique) :</strong> Nécessite un gestionnaire de fenêtres et des bibliothèques graphiques complexes.</li>
+        </ul>
+
+        <h3>Gestion des réseaux</h3>
+        <p>Inclure une pile TCP/IP pour permettre la communication et l'accès Internet.</p>
+    </div>
+
+    <h2>5. Tester et valider l'OS</h2>
+    <div class="content-block">
+        <ul>
+            <li><strong>QEMU / Bochs :</strong> Simulation d'environnements matériels complets pour le test rapide.</li>
+            <li><strong>Débogage :</strong> Utilisation de GDB pour traquer les erreurs de bas niveau.</li>
+        </ul>
+    </div>
+
+    <h2>6. Ajouter des fonctionnalités avancées</h2>
+    <div class="content-block">
+        <ul>
+            <li><strong>Multitâche :</strong> Exécution simultanée de plusieurs processus.</li>
+            <li><strong>Sécurité :</strong> Autorisations utilisateurs et isolation des processus.</li>
+            <li><strong>Périphériques avancés :</strong> Pilotes pour cartes graphiques modernes, imprimantes, etc.</li>
+        </ul>
+    </div>
+
+    <h2>Ressources utiles</h2>
+    <div class="content-block">
+        <ul>
+            <li>Livre: <em>"Operating Systems: Design and Implementation"</em> (Andrew S. Tanenbaum).</li>
+            <li><strong>OSDev.org :</strong> La ressource communautaire de référence.</li>
+            <li>Projet GRUB pour la gestion du boot.</li>
+        </ul>
+    </div>
+
+    <h2 style="border-left: 3px solid #fff;">Conclusion</h2>
+    <p>Créer un système d'exploitation est un projet complexe mais gratifiant. Cela permet de comprendre intimement le fonctionnement des ordinateurs. En suivant une approche méthodique (Percevoir, Réfléchir, Agir), vous construirez brique par brique votre propre système. 🎯</p>
+
+    <div class="footer-note">
+        ALPHA_ARCHIVE // SECTION_SYSTEM_DEV // 2026
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive Alpha - Bases de la Chasse</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #d35400; --text: #e0e0e0; --danger: #c0392b; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.6; }
+        .container { max-width: 800px; padding: 40px 20px; }
+        
+        .header-nav { border-bottom: 1px solid #222; padding-bottom: 15px; margin-bottom: 30px; display: flex; align-items: center; }
+        .back-link { color: #555; text-decoration: none; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+        .back-link:hover { color: var(--accent); }
+        
+        h1 { font-size: 1.5rem; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+        h2 { font-size: 1.1rem; font-weight: 700; border-bottom: 1px solid #333; padding-bottom: 5px; margin-top: 30px; color: #fff; }
+        h3 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--accent); margin-top: 15px; letter-spacing: 1px; }
+        
+        .content-block { background: var(--card-bg); padding: 25px; border-radius: 8px; border: 1px solid #222; }
+        .info-box { background: #1a1a1a; padding: 15px; border-radius: 4px; border-left: 3px solid var(--accent); margin: 15px 0; font-size: 0.9rem; }
+        
+        .method-item { margin-bottom: 15px; padding-left: 10px; }
+        .method-title { font-weight: bold; color: #fff; display: block; }
+        
+        .check-list { list-style: none; padding-left: 0; }
+        .check-list li { margin-bottom: 8px; position: relative; padding-left: 25px; }
+        .check-list li::before { content: '✔️'; position: absolute; left: 0; }
+        
+        .warning-box { border: 1px solid #4d1a1a; background: #250a0a; padding: 15px; border-radius: 4px; margin-top: 20px; }
+        .ethic-item { color: #ffadad; margin-bottom: 5px; display: block; }
+        
+        .survive-box { border: 1px solid #3d2b1f; background: #1a120b; padding: 20px; border-radius: 4px; margin-top: 30px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-nav">
+        <a href="./index.html" class="back-link">← RETOUR_CHASSE</a>
+    </div>
+
+    <h1>Bases de la Chasse</h1>
+    
+    <div class="content-block">
+        <p>La chasse est une pratique ancienne qui nécessite des connaissances en traque, en tir, en fabrication de pièges et en respect des lois de la nature. Voici les bases pour chasser efficacement et de manière éthique.</p>
+
+        <h2>1. Choisir son type de chasse</h2>
+        <p>Il existe plusieurs méthodes selon l’environnement, le gibier et les outils disponibles :</p>
+        
+        <div class="method-item">
+            <span class="method-title">🏹 Chasse à l’arc</span>
+            <small>Utilise un arc traditionnel ou moderne (arc à poulies). Nécessite un excellent camouflage et un tir précis. Idéal pour les cerfs, sangliers, petits gibiers.</small>
+        </div>
+
+        <div class="method-item">
+            <span class="method-title">🔫 Chasse à la carabine ou fusil</span>
+            <small>Précision et portée supérieures à l’arc. Différents calibres selon l’animal (chevreuil, sanglier, lapin, oiseaux). Nécessite des autorisations et permis dans la plupart des pays.</small>
+        </div>
+
+        <div class="method-item">
+            <span class="method-title">🪤 Chasse aux pièges</span>
+            <small>Utilise collets, cages, trous ou pièges à bascule. Plus discrète et efficace en survie. Exige de connaître les passages d’animaux.</small>
+        </div>
+
+        <div class="method-item">
+            <span class="method-title">🐕 Chasse avec chiens</span>
+            <small>Utilisée pour débusquer le gibier (lapin, sanglier, cerf). Requiert des chiens bien entraînés.</small>
+        </div>
+
+        <h2>2. Identifier les traces et comportements</h2>
+        <p>🎯 Bien connaître le gibier est essentiel pour l’approcher sans se faire repérer.</p>
+
+        <h3>Repérer les signes de présence :</h3>
+        <ul class="check-list">
+            <li>Empreintes au sol (cerf, sanglier, renard, lièvre).</li>
+            <li>Excréments : indiquent l’alimentation et la fréquence de passage.</li>
+            <li>Plumes et poils accrochés aux branches.</li>
+            <li>Arbres grattés par les cerfs ou marcassins.</li>
+            <li>Sentiers d’animaux souvent visibles dans les sous-bois.</li>
+        </ul>
+
+        <h3>Connaître les habitudes du gibier :</h3>
+        <ul class="check-list">
+            <li>Actifs le matin et en fin de journée (meilleur moment pour chasser).</li>
+            <li>Les sangliers adorent les zones boueuses.</li>
+            <li>Les cerfs préfèrent les forêts denses.</li>
+            <li>Les lapins et lièvres sont souvent près des champs ouverts.</li>
+        </ul>
+
+        <h2>3. Techniques d’approche et de tir</h2>
+        <p>Discrétion et patience sont les clés d’une bonne chasse.</p>
+
+        <h3>Camouflage et furtivité :</h3>
+        <ul class="check-list">
+            <li>Porter des vêtements adaptés (camo ou tons naturels).</li>
+            <li>Se déplacer contre le vent pour que l’animal ne détecte pas l’odeur.</li>
+            <li>Marcher lentement et éviter les bruits inutiles.</li>
+            <li>Se cacher derrière des arbres, buissons, rochers.</li>
+        </ul>
+
+        <h3>Techniques de tir :</h3>
+        <ul class="check-list">
+            <li>Viser des zones vitales (cœur, tête, poumons) pour une mise à mort rapide.</li>
+            <li>Toujours tirer en toute sécurité, vérifier l’arrière-plan du tir.</li>
+            <li>Adapter la distance de tir selon l’arme (arc : 15-30m, fusil : 50-200m).</li>
+        </ul>
+
+        <h2>4. Après la chasse : traitement du gibier</h2>
+        <p>Une fois l’animal abattu, il faut le traiter rapidement pour éviter qu’il ne pourrisse.</p>
+        <div class="info-box">
+            <ul style="padding-left: 15px; margin-bottom: 0;">
+                <li><strong>Éviscération sur place :</strong> pour éviter le poids inutile et éloigner les prédateurs.</li>
+                <li><strong>Transport :</strong> Transporter le gibier dans un endroit frais (éviter la chaleur).</li>
+                <li><strong>Dépeçage :</strong> Dépouiller et découper selon les règles sanitaires.</li>
+                <li><strong>Conservation :</strong> Conserver la viande au réfrigérateur ou en fumage/séchage pour la longue durée.</li>
+            </ul>
+        </div>
+
+        <h2>5. Réglementation et éthique</h2>
+        <div class="warning-box">
+            <span class="ethic-item">🔴 Toujours respecter les lois locales (saisons, permis, espèces protégées).</span>
+            <span class="ethic-item">🔴 Ne pas chasser pour le plaisir mais pour se nourrir.</span>
+            <span class="ethic-item">🔴 Éviter le gaspillage : utiliser un maximum de l’animal (viande, peau, os).</span>
+            <span class="ethic-item">🔴 Respecter la nature et ne pas surexploiter une espèce.</span>
+        </div>
+
+        <div class="survive-box">
+            <h3>6. Chasse de survie (sans armes modernes)</h3>
+            <p>Si tu es en situation de survie et que tu n’as pas d’arme, voici des alternatives :</p>
+            <ul style="list-style: none; padding-left: 0; font-size: 0.85rem; color: #ccc;">
+                <li>🪤 <strong>Piégeage :</strong> Utiliser des pièges (collets, nasses, trous) pour petits animaux.</li>
+                <li>🏹 <strong>Artisanat :</strong> Fabriquer un arc ou une lance avec du bois solide.</li>
+                <li>🪓 <strong>Impact :</strong> Utiliser des pierres et bâtons pour assommer du gibier.</li>
+                <li>🔥 <strong>Cuisson :</strong> Cuire la viande sur un feu de camp pour éviter les bactéries.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha - Mobile Engineering & Design</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #a29bfe; --accent-secondary: #00cec9; --code-bg: #000; }
+        body { 
+            background-color: var(--bg); color: #ccc; 
+            font-family: 'Inter', sans-serif; line-height: 1.6; padding: 20px;
+        }
+        .container { max-width: 900px; background: var(--card-bg); padding: 40px; border-radius: 8px; border: 1px solid #222; }
+        .header-mini { border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
+        .status { font-size: 0.6rem; color: var(--accent); font-weight: 700; text-transform: uppercase; border: 1px solid var(--accent); padding: 2px 8px; border-radius: 3px; letter-spacing: 1px; }
+        
+        h1 { color: #fff; font-weight: 900; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { color: var(--accent); font-size: 1.1rem; text-transform: uppercase; margin-top: 35px; font-weight: 800; letter-spacing: 1px; border-left: 3px solid var(--accent-secondary); padding-left: 15px; }
+        h3 { color: #fff; font-size: 1rem; margin-top: 20px; font-weight: 700; }
+
+        .content-block { background: #0f0f0f; border: 1px solid #222; padding: 20px; border-radius: 6px; margin-bottom: 20px; }
+        .warning-block { border: 1px solid #444; background: rgba(162, 155, 254, 0.05); color: #aaa; padding: 15px; border-radius: 6px; margin-bottom: 20px; font-style: italic; font-size: 0.9rem; }
+        
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        strong { color: #fff; }
+        
+        .back-btn { color: #555; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; transition: 0.2s; }
+        .back-btn:hover { color: var(--accent); }
+        .footer-note { font-size: 0.7rem; color: #444; text-align: center; margin-top: 40px; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-mini">
+        <a href="../index.html" class="back-btn">← Retour Index</a>
+        <span class="status">Protocol: Mobile_Hardware_v1.0</span>
+    </div>
+
+    <h1>📱 Comment créer un smartphone ?</h1>
+    <div class="warning-block">
+        Créer un smartphone à partir de zéro est un projet ambitieux et extrêmement complexe qui nécessite des compétences approfondies dans plusieurs domaines : électronique, ingénierie des circuits, design industriel, programmation et fabrication de composants.
+    </div>
+
+    <h2>1. Comprendre les composants principaux</h2>
+    <div class="content-block">
+        <ul>
+            <li><strong>Processeur (SoC) :</strong> Le cerveau (Snapdragon, Apple A-series, MediaTek).</li>
+            <li><strong>Mémoire (RAM et stockage) :</strong> Exécution des apps (RAM) et stockage des données (eMMC/UFS).</li>
+            <li><strong>Écran :</strong> Technologie LCD ou OLED avec dalle tactile capacitive.</li>
+            <li><strong>Batterie :</strong> Généralement de type Li-ion ou Li-Po.</li>
+            <li><strong>Capteurs :</strong> Accéléromètre, gyroscope, proximité, luminosité, empreinte.</li>
+            <li><strong>Carte mère :</strong> Centre de communication reliant tous les composants.</li>
+            <li><strong>Connectivité :</strong> Modules Wi-Fi, Bluetooth, GPS, NFC, 4G/5G.</li>
+            <li><strong>Système d'exploitation (OS) :</strong> Logiciel de gestion (Android, iOS, Linux).</li>
+        </ul>
+    </div>
+
+    <h2>2. Conception du smartphone</h2>
+    <div class="content-block">
+        <h3>Étape 1 : Design du boîtier et du châssis</h3>
+        <p>Le design industriel doit être ergonomique et esthétique, utilisant des matériaux comme l'aluminium, le verre ou le plastique, tout en assurant une dissipation thermique adéquate.</p>
+
+        <h3>Étape 2 : Sélection des composants internes</h3>
+        <p>Le choix du SoC doit équilibrer puissance et consommation. La batterie est choisie selon sa capacité (mAh), et l'écran selon sa résolution et sa colorimétrie.</p>
+
+        <h3>Étape 3 : Création de la carte mère</h3>
+        <p>Conception de circuits imprimés (PCB) complexes pour intégrer tous les modules et assurer une connectivité sans faille.</p>
+    </div>
+
+    <h2>3. Fabrication des composants</h2>
+    <div class="content-block">
+        <ul>
+            <li><strong>Processeur :</strong> Fabriqué par des fondeurs spécialisés dans des installations extrêmement coûteuses.</li>
+            <li><strong>Écran tactile :</strong> Nécessite des technologies avancées de traitement du verre et des couches conductrices.</li>
+            <li><strong>Batterie :</strong> Conception sécurisée pour fournir une énergie compacte.</li>
+            <li><strong>Caméras :</strong> Modules optiques de précision (Sony, Samsung) avec stabilisation et autofocus.</li>
+        </ul>
+    </div>
+
+    <h2>4. Développement du système d'exploitation</h2>
+    <div class="content-block">
+        <p>Utilisation de noyaux basés sur <strong>Linux</strong> :</p>
+        <ul>
+            <li><strong>Android :</strong> Open-source (Google).</li>
+            <li><strong>iOS :</strong> Propriétaire (Apple).</li>
+        </ul>
+        <p>Le développement nécessite une expertise en programmation bas-niveau et en gestion des ressources matérielles.</p>
+    </div>
+
+    <h2>5. Assemblage et Test</h2>
+    <div class="content-block">
+        <p>L'assemblage s'effectue sur des lignes automatisées, suivi de tests rigoureux :</p>
+        <ul>
+            <li>Fonctionnement matériel complet.</li>
+            <li>Précision des interactions tactiles.</li>
+            <li>Validation des capteurs et de la connectivité réseau.</li>
+        </ul>
+    </div>
+
+    <h2>6. Production de masse</h2>
+    <div class="content-block">
+        <p>Achat des composants en gros, mise en place des chaînes de montage et gestion de la logistique de distribution et du support client.</p>
+    </div>
+
+    <h2 style="border-left: 3px solid #fff;">7. Conclusion</h2>
+    <p>La fabrication complète nécessite des infrastructures industrielles. Cependant, un projet <strong>DIY</strong> peut être initié avec une carte de développement (type <strong>Raspberry Pi</strong>), un écran et un OS léger comme LineageOS pour comprendre l'architecture mobile. 🎯</p>
+
+    <div class="footer-note">
+        ALPHA_ARCHIVE // SECTION_HARDWARE_MOBILE // 2026
+    </div>
+</div>
+
+</body>
+</html>

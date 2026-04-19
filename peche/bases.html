@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive Alpha - Guide de Pêche</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #2980b9; --text: #e0e0e0; --highlight: #3498db; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.6; }
+        .container { max-width: 800px; padding: 40px 20px; }
+        
+        .header-nav { border-bottom: 1px solid #222; padding-bottom: 15px; margin-bottom: 30px; display: flex; align-items: center; }
+        .back-link { color: #555; text-decoration: none; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+        .back-link:hover { color: var(--accent); }
+        
+        h1 { font-size: 1.5rem; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+        h2 { font-size: 1.1rem; font-weight: 700; border-bottom: 1px solid #333; padding-bottom: 5px; margin-top: 30px; color: #fff; }
+        h3 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--accent); margin-top: 15px; letter-spacing: 1px; }
+        
+        .content-block { background: var(--card-bg); padding: 25px; border-radius: 8px; border: 1px solid #222; }
+        .info-box { background: #1a1a1a; padding: 15px; border-radius: 4px; border-left: 3px solid var(--accent); margin: 15px 0; font-size: 0.9rem; }
+        
+        .technique-item { margin-bottom: 15px; border-left: 1px solid #333; padding-left: 15px; }
+        .tech-title { font-weight: bold; color: #fff; display: block; margin-bottom: 5px; }
+        
+        .check-list { list-style: none; padding-left: 0; }
+        .check-list li { margin-bottom: 8px; position: relative; padding-left: 25px; }
+        .check-list li::before { content: '✔'; position: absolute; left: 0; color: var(--accent); }
+        
+        .warning-box { border: 1px solid #1a3a4d; background: #0a1625; padding: 15px; border-radius: 4px; margin-top: 20px; }
+        .rule-item { color: #add8ff; margin-bottom: 5px; display: block; font-size: 0.9rem; }
+        
+        .survive-tag { background: #2c3e50; color: #ecf0f1; padding: 2px 6px; font-size: 0.7rem; border-radius: 3px; text-transform: uppercase; margin-left: 5px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-nav">
+        <a href="./index.html" class="back-link">← RETOUR_PECHE</a>
+    </div>
+
+    <h1>Guide Complet de Pêche</h1>
+    
+    <div class="content-block">
+        <p>La pêche est une activité qui demande patience, technique et connaissance des milieux aquatiques. Voici un guide complet pour apprendre à pêcher efficacement.</p>
+
+        <h2>1. Choisir son type de pêche 🎣</h2>
+        <div class="technique-item">
+            <span class="tech-title">🏞 Pêche en eau douce (rivières, lacs, étangs)</span>
+            <small>Poissons : brochet, perche, carpe, truite, sandre, silure...<br>
+            Techniques : pêche au flotteur, au leurre, à la mouche, au coup.</small>
+        </div>
+
+        <div class="technique-item">
+            <span class="tech-title">🌊 Pêche en mer (côte, bateau, surfcasting)</span>
+            <small>Poissons : bar, dorade, maquereau, thon, cabillaud...<br>
+            Techniques : pêche au lancer, pêche à soutenir, jigging, palangrotte.</small>
+        </div>
+
+        <div class="technique-item">
+            <span class="tech-title">🏕 Pêche de survie <span class="survive-tag">Sans matériel</span></span>
+            <small>Utilisation de pièges, filets, nasses, harpons. Pêche à la main ou avec des bâtons pointus.</small>
+        </div>
+
+        <h2>2. Choisir son équipement 🛠</h2>
+        <h3>Canne à pêche et moulinet :</h3>
+        <ul class="check-list">
+            <li>Canne légère (2-4m) pour les petits poissons.</li>
+            <li>Canne plus robuste pour les gros poissons.</li>
+            <li>Moulinet adapté au type de ligne et de poisson recherché.</li>
+        </ul>
+
+        <h3>Fil de pêche et hameçons :</h3>
+        <ul class="check-list">
+            <li>Fil fin (0,12-0,30mm) pour truites, gardons, perches.</li>
+            <li>Fil plus épais (0,30-0,50mm) pour carnassiers et poissons de mer.</li>
+            <li>Hameçon adapté à la taille du poisson (petit pour gardons, grand pour brochets).</li>
+        </ul>
+
+        <h3>Appâts et leurres :</h3>
+        <ul class="check-list">
+            <li>Appâts naturels : vers, asticots, pain, maïs, crevettes.</li>
+            <li>Leurres artificiels : poissons nageurs, cuillères, leurres souples.</li>
+        </ul>
+
+        <h2>3. Techniques de pêche de base</h2>
+        <div class="info-box">
+            <strong>🎯 Pêche au flotteur :</strong> Fixer un flotteur, un plomb et un hameçon. Ajouter l'appât. Attendre que le flotteur bouge avant de ferrer.<br><br>
+            <strong>🏹 Pêche au lancer :</strong> Lancer un leurre ou cuillère et ramener en moulinant. Efficace pour le brochet et la perche.<br><br>
+            <strong>🐠 Pêche au fond :</strong> Utiliser un plomb pour que l'appât repose au fond. Attendre la touche et ferrer rapidement.<br><br>
+            <strong>🦐 Pêche à la nasse :</strong> Placer une cage appâtée. Idéal pour crevettes, crabes et anguilles.
+        </div>
+
+        <h2>4. Lire l’eau et repérer les poissons 👀</h2>
+        <p>📌 Chercher les endroits stratégiques :</p>
+        <ul class="check-list">
+            <li>Eau calme avec végétation pour les poissons blancs (gardon, brème).</li>
+            <li>Eaux courantes et oxygénées pour truites et perches.</li>
+            <li>Zones profondes et encombrées pour les gros carnassiers.</li>
+            <li>Proximité des rochers et épaves en mer pour bars et dorades.</li>
+        </ul>
+
+        <h2>5. Attraper et relâcher un poisson</h2>
+        <ul class="check-list">
+            <li>Ferrer fermement mais sans brutalité.</li>
+            <li>Ramener le poisson en douceur avec la canne pour éviter qu’il se décroche.</li>
+            <li>Utiliser une épuisette pour sécuriser la prise.</li>
+            <li>Si vous relâchez le poisson, faites-le rapidement et délicatement.</li>
+        </ul>
+
+        <h2>6. Pêche de survie (sans canne) 🏕</h2>
+        <div class="info-box" style="border-left-color: #7f8c8d;">
+            <small>
+            🔹 Fabriquer une ligne avec du fil et un hameçon improvisé (épingle, os taillé).<br>
+            🔹 Utiliser des nasses en branches ou en bouteille plastique.<br>
+            🔹 Attraper des poissons à la main (technique du "noodling").<br>
+            🔹 Utiliser une lance ou un arc pour viser les poissons en eaux peu profondes.
+            </small>
+        </div>
+
+        <h2>7. Respect et réglementation 🌿</h2>
+        <div class="warning-box">
+            <span class="rule-item">🔴 Vérifier les règles locales (saisons, permis, tailles minimales).</span>
+            <span class="rule-item">🔴 Ne pas surpêcher : relâcher les petits pour l'écosystème.</span>
+            <span class="rule-item">🔴 Respecter la nature : zéro déchet (ni fil, ni hameçon dans l'eau).</span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

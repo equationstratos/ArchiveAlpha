@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive Alpha - Munitions & Balistique</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #ffc107; --danger: #dc3545; }
+        body { 
+            background-color: var(--bg); color: #e0e0e0; 
+            font-family: 'Inter', sans-serif; overflow: hidden;
+            height: 100vh; display: flex; flex-direction: column;
+        }
+        
+        .header { padding: 10px 20px; border-bottom: 1px solid #222; background: #0f0f0f; }
+        .back-home { color: #555; text-decoration: none; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; transition: 0.2s; }
+        .back-home:hover { color: var(--accent); }
+        .search-bar { 
+            background: #1a1a1a; border: 1px solid #333; color: white; 
+            border-radius: 6px; padding: 6px 15px; width: 250px; outline: none; font-size: 0.8rem;
+        }
+        
+        .tab-content { flex-grow: 1; padding: 20px; overflow-y: auto; }
+        
+        .section-label { 
+            width: 100%; font-size: 0.65rem; color: #444; 
+            text-transform: uppercase; letter-spacing: 2px; 
+            margin: 25px 0 10px 5px; font-weight: 900;
+            border-left: 2px solid var(--accent); padding-left: 10px;
+        }
+
+        .card { 
+            background-color: var(--card-bg) !important; border: 1px solid #222 !important;
+            transition: all 0.1s ease; min-height: 85px; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            border-radius: 6px; padding: 5px !important; text-decoration: none !important;
+            cursor: pointer;
+        }
+        .card:hover { transform: scale(1.05); border-color: #444 !important; background: #1c1c1c !important; }
+        .title { font-size: 0.55rem; font-weight: 700; margin-top: 6px; text-transform: uppercase; color: #888; text-align: center; }
+        .emoji-box { font-size: 1.2rem; }
+        
+        /* Modal Style */
+        .modal-content { background-color: #111; border: 1px solid #333; color: #ccc; }
+        .modal-header { border-bottom: 1px solid #222; }
+        .highlight { color: var(--accent); font-weight: bold; }
+        .warning-text { color: var(--danger); font-weight: 700; border: 1px solid var(--danger); padding: 10px; border-radius: 4px; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+
+<div class="header d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+        <a href="../index.html" class="back-home me-4">← RETOUR_TACTICAL</a>
+        <div style="font-weight: 900; letter-spacing: 2px; font-size: 0.8rem; color: #444;">DATABASE_MUNITIONS</div>
+    </div>
+    <input type="text" id="searchInput" class="search-bar" placeholder="RECHERCHER COMPOSANT..." autocomplete="off" />
+</div>
+
+<div class="tab-content">
+    
+    <div class="section-label">Fabrication & Rechargement</div>
+    <div class="row g-2">
+        <div class="col-3 col-md-2 col-lg-1">
+            <div class="card" data-bs-toggle="modal" data-bs-target="#modalGuide">
+                <span class="emoji-box">⚙️</span>
+                <h6 class="title">Guide Complet</h6>
+            </div>
+        </div>
+        <div class="col-3 col-md-2 col-lg-1"><a href="./poudres.html"><div class="card"><span class="emoji-box">⚗️</span><h6 class="title">Poudres</h6></div></a></div>
+        <div class="col-3 col-md-2 col-lg-1"><a href="./amorces.html"><div class="card"><span class="emoji-box">🔘</span><h6 class="title">Amorces</h6></div></a></div>
+        <div class="col-3 col-md-2 col-lg-1"><a href="./presses.html"><div class="card"><span class="emoji-box">🏗️</span><h6 class="title">Outillage</h6></div></a></div>
+    </div>
+
+    <div class="section-label">Matériaux & Fonderie</div>
+    <div class="row g-2">
+        <div class="col-3 col-md-2 col-lg-1"><a href="./fonderie_plomb.html"><div class="card"><span class="emoji-box">🔥</span><h6 class="title">Coulée Plomb</h6></div></a></div>
+        <div class="col-3 col-md-2 col-lg-1"><a href="./alliages.html"><div class="card"><span class="emoji-box">🧪</span><h6 class="title">Alliages</h6></div></a></div>
+        <div class="col-3 col-md-2 col-lg-1"><a href="./nettoyage_douilles.html"><div class="card"><span class="emoji-box">🧼</span><h6 class="title">Nettoyage Étuis</h6></div></a></div>
+    </div>
+
+    <div class="section-label">Balistique & Logistique</div>
+    <div class="row g-2">
+        <div class="col-3 col-md-2 col-lg-1"><a href="./tables_balistique.html"><div class="card"><span class="emoji-box">📊</span><h6 class="title">Tables Tir</h6></div></a></div>
+        <div class="col-3 col-md-2 col-lg-1"><a href="./stockage_securise.html"><div class="card"><span class="emoji-box">📦</span><h6 class="title">Stockage NV</h6></div></a></div>
+        <div class="col-3 col-md-2 col-lg-1"><a href="./calibres_data.html"><div class="card"><span class="emoji-box">📏</span><h6 class="title">Données Calibres</h6></div></a></div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalGuide" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">GUIDE DE FABRICATION / RECHARGEMENT</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" style="font-size: 0.9rem; line-height: 1.5;">
+                <div class="warning-text">
+                    ATTENTION : Le rechargement est un processus complexe et potentiellement dangereux. Respectez scrupuleusement les lois locales et nationales.
+                </div>
+                <p>Fabriquer ses propres munitions demande de la précision, de la prudence et des connaissances spécifiques.</p>
+                
+                <h6 class="highlight">1. Vérification Légale</h6>
+                <p>Assurez-vous que le rechargement est légal dans votre région. Des licences spécifiques peuvent être requises.</p>
+
+                <h6 class="highlight">2. Matériel de base</h6>
+                <ul>
+                    <li>Étuis usagés (nettoyés et redimensionnés)</li>
+                    <li>Poudre (spécifique au calibre et type d'arme)</li>
+                    <li>Balles/Projectiles (plomb, cuivre, acier)</li>
+                    <li>Amorces (capsules d'ignition)</li>
+                    <li>Presse de rechargement</li>
+                    <li>Balance de précision</li>
+                </ul>
+
+                <h6 class="highlight">3. Processus de fabrication</h6>
+                <ol>
+                    <li><strong>Nettoyage :</strong> Retirer résidus et oxydation (ultrasons ou brosses).</li>
+                    <li><strong>Redimensionnement :</strong> Rendre à l'étui sa forme d'origine via la presse.</li>
+                    <li><strong>Amorçage :</strong> Installation délicate de la nouvelle amorce.</li>
+                    <li><strong>Poudre :</strong> Pesée stricte selon les tables de chargement. <span class="text-danger">Risque de surpression !</span></li>
+                    <li><strong>Siège de la balle :</strong> Insertion du projectile à la profondeur adéquate.</li>
+                </ol>
+
+                <h6 class="highlight">4. Sécurité et Risques</h6>
+                <p>Le principal danger est la <strong>surpression</strong> (trop de poudre) qui peut faire exploser l'arme. Portez toujours des protections oculaires et manipulez les produits chimiques avec précaution.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

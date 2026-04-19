@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive Alpha - Textiles & Matériaux</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #2ecc71; --paper: #d4c4a8; }
+        body { 
+            background-color: var(--bg); color: #e0e0e0; 
+            font-family: 'Inter', sans-serif; overflow: hidden;
+            height: 100vh; display: flex; flex-direction: column;
+        }
+        
+        .header { padding: 10px 20px; border-bottom: 1px solid #222; background: #0f0f0f; }
+        .back-home { color: #555; text-decoration: none; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; transition: 0.2s; }
+        .back-home:hover { color: var(--accent); }
+        .search-bar { 
+            background: #1a1a1a; border: 1px solid #333; color: white; 
+            border-radius: 6px; padding: 6px 15px; width: 250px; outline: none; font-size: 0.8rem;
+        }
+        
+        .tab-content { flex-grow: 1; padding: 20px; overflow-y: auto; }
+        
+        .section-label { 
+            width: 100%; font-size: 0.65rem; color: #444; 
+            text-transform: uppercase; letter-spacing: 2px; 
+            margin: 25px 0 10px 5px; font-weight: 900;
+            border-left: 2px solid var(--accent); padding-left: 10px;
+        }
+
+        .card { 
+            background-color: var(--card-bg) !important; border: 1px solid #222 !important;
+            transition: all 0.1s ease; min-height: 85px; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            border-radius: 6px; padding: 5px !important; text-decoration: none !important;
+        }
+        .card:hover { transform: scale(1.05); border-color: #444 !important; background: #1c1c1c !important; }
+        .title { font-size: 0.55rem; font-weight: 700; margin-top: 6px; text-transform: uppercase; color: #888; text-align: center; }
+        .emoji-box { font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+
+<div class="header d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+        <a href="../index.html" class="back-home me-4">← HOME_INDEX</a>
+        <div style="font-weight: 900; letter-spacing: 2px; font-size: 0.8rem; color: #444;">MATÉRIAUX_ET_TEXTILES</div>
+    </div>
+    <input type="text" id="searchInput" class="search-bar" placeholder="RECHERCHER FIBRE..." autocomplete="off" />
+</div>
+
+<div class="tab-content">
+    
+    <div class="section-label">Production Textile & Couture</div>
+    <div class="row g-2">
+        <div class="col-3 col-md-2 col-lg-1"><a href="./textiles/fibres.html"><div class="card"><span class="emoji-box">🌱</span><h6 class="title">Fibres & Filage</h6></div></a></div>
+        <div class="col-3 col-md-2 col-lg-1"><a href="./textiles/tissage.html"><div class="card"><span class="emoji-box">🧵</span><h6 class="title">Tissage</h6></div></a></div>
+        <div class="col-3 col-md-2 col-lg-1"><a href="./textiles/teinture.html"><div class="card"><span class="emoji-box">🎨</span><h6 class="title">Teinture</h6></div></a></div>
+        <div class="col-3 col-md-2 col-lg-1"><a href="./textiles/couture.html"><div class="card"><span class="emoji-box">🪡</span><h6 class="title">Couture</h6></div></a></div>
+        <div class="col-3 col-md-2 col-lg-1"><a href="./textiles/mesures.html"><div class="card"><span class="emoji-box">📏</span><h6 class="title">Patrons</h6></div></a></div>
+    </div>
+
+    <div class="section-label">Papeterie & Reliure</div>
+    <div class="row g-2">
+        <div class="col-3 col-md-2 col-lg-1"><a href="./papier/recyclage.html"><div class="card"><span class="emoji-box">♻️</span><h6 class="title">Papier Recyclé</h6></div></a></div>
+        <div class="col-3 col-md-2 col-lg-1"><a href="./papier/vegetal.html"><div class="card"><span class="emoji-box">🌿</span><h6 class="title">Fibres Végétales</h6></div></a></div>
+        <div class="col-3 col-md-2 col-lg-1"><a href="./papier/reliure.html"><div class="card"><span class="emoji-box">📖</span><h6 class="title">Reliure</h6></div></a></div>
+    </div>
+
+    <div class="section-label">Tannerie & Cuir (Proposé)</div>
+    <div class="row g-2">
+        <div class="col-3 col-md-2 col-lg-1"><a href="./cuir/tannage.html"><div class="card"><span class="emoji-box">🐂</span><h6 class="title">Tannage Brut</h6></div></a></div>
+        <div class="col-3 col-md-2 col-lg-1"><a href="./cuir/travail.html"><div class="card"><span class="emoji-box">🔨</span><h6 class="title">Maroquinerie</h6></div></a></div>
+        <div class="col-3 col-md-2 col-lg-1"><a href="./cuir/cordonnerie.html"><div class="card"><span class="emoji-box">👞</span><h6 class="title">Chaussures</h6></div></a></div>
+    </div>
+
+    <div class="section-label">Protection & Technique (Proposé)</div>
+    <div class="row g-2">
+        <div class="col-3 col-md-2 col-lg-1"><a href="./tech/impermeabilisation.html"><div class="card"><span class="emoji-box">☔</span><h6 class="title">Étanchéité</h6></div></a></div>
+        <div class="col-3 col-md-2 col-lg-1"><a href="./tech/camouflage.html"><div class="card"><span class="emoji-box">🌑</span><h6 class="title">Camouflage</h6></div></a></div>
+        <div class="col-3 col-md-2 col-lg-1"><a href="./tech/gilet_tactique.html"><div class="card"><span class="emoji-box">🪖</span><h6 class="title">Équipement NV</h6></div></a></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

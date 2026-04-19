@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive Alpha - Tactical Database</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #007bff; --danger: #ff4d4d; }
+        body { 
+            background-color: var(--bg); color: #e0e0e0; 
+            font-family: 'Inter', sans-serif; overflow: hidden;
+            height: 100vh; display: flex; flex-direction: column;
+        }
+        
+        .header { padding: 10px 20px; border-bottom: 1px solid #222; background: #0f0f0f; }
+        .back-home { color: #555; text-decoration: none; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; transition: 0.2s; }
+        .back-home:hover { color: var(--accent); }
+        .search-bar { 
+            background: #1a1a1a; border: 1px solid #333; color: white; 
+            border-radius: 6px; padding: 6px 15px; width: 250px; outline: none; font-size: 0.8rem;
+        }
+        
+        .nav-pills { padding: 10px; background: #0f0f0f; border-bottom: 1px solid #222; justify-content: center; }
+        .nav-link { 
+            color: #666 !important; text-transform: uppercase; font-size: 0.7rem; 
+            font-weight: 700; letter-spacing: 1px; padding: 8px 15px !important;
+            transition: all 0.2s; border-radius: 4px !important;
+        }
+        .nav-link.active { background-color: var(--accent) !important; color: white !important; }
+        .nav-link:hover:not(.active) { color: #aaa !important; background: #1a1a1a; }
+        
+        .tab-content { flex-grow: 1; padding: 20px; overflow-y: auto; }
+        
+        .card { 
+            background-color: var(--card-bg) !important; border: 1px solid #222 !important;
+            transition: all 0.1s ease; min-height: 85px; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            border-radius: 6px; padding: 5px !important; text-decoration: none !important;
+        }
+        .card:hover { transform: scale(1.05); border-color: #444 !important; background: #1c1c1c !important; }
+        .title { 
+            font-size: 0.55rem; font-weight: 700; margin-top: 6px; 
+            text-transform: uppercase; color: #888; text-align: center;
+        }
+        .emoji-box { font-size: 1.2rem; }
+        .d-none-search { display: none !important; }
+        
+        .section-label { 
+            width: 100%; font-size: 0.65rem; color: #333; 
+            text-transform: uppercase; letter-spacing: 2px; 
+            margin: 25px 0 10px 5px; font-weight: 900;
+            border-left: 2px solid var(--accent); padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+        <a href="../index.html" class="back-home me-4">← HOME_INDEX</a>
+        <div style="font-weight: 900; letter-spacing: 2px; font-size: 0.8rem; color: #444;">ARCHIVE_ALPHA_2026</div>
+    </div>
+    <input type="text" id="searchInput" class="search-bar" placeholder="RECHERCHER MODULE..." autocomplete="off" />
+</div>
+
+<ul class="nav nav-pills" id="pills-tab" role="tablist">
+    <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#ops">Tactical</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#life">Autonomy</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#tech">Engineering</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#sci">Science</button></li>
+</ul>
+
+<div class="tab-content" id="pills-tabContent">
+    
+    <div class="tab-pane fade show active" id="ops">
+        
+        <div class="section-label">Classification par Type</div>
+        <div class="row g-2">
+            <div class="col-3 col-md-2 col-lg-1"><a href="./couteaux.html"><div class="card card-body"><span class="emoji-box">🔪</span><h6 class="title">Blanches</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./feu_courtes.html"><div class="card card-body"><span class="emoji-box">🔫</span><h6 class="title">Feu Courtes</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./weapons/feu_longues.html"><div class="card card-body"><span class="emoji-box">🎯</span><h6 class="title">Feu Longues</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./weapons/precision.html"><div class="card card-body"><span class="emoji-box">🔭</span><h6 class="title">Précision</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./weapons/jet.html"><div class="card card-body"><span class="emoji-box">🏹</span><h6 class="title">Jet</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./weapons/improvisees.html"><div class="card card-body"><span class="emoji-box">🛠️</span><h6 class="title">Improvisées</h6></div></a></div>
+        </div>
+
+        <div class="section-label">Usage Tactique</div>
+        <div class="row g-2">
+            <div class="col-3 col-md-2 col-lg-1"><a href="./ops/cqc.html"><div class="card card-body"><span class="emoji-box">🥊</span><h6 class="title">CQC</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./ops/discret.html"><div class="card card-body"><span class="emoji-box">🤫</span><h6 class="title">Discret</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./ops/defense_site.html"><div class="card card-body"><span class="emoji-box">🛡️</span><h6 class="title">Défense Site</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./ops/chasse.html"><div class="card card-body"><span class="emoji-box">🦌</span><h6 class="title">Chasse</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./ops/non_lethal.html"><div class="card card-body"><span class="emoji-box">⚡</span><h6 class="title">Non-Léthal</h6></div></a></div>
+        </div>
+
+        <div class="section-label">Technique & Maintenance</div>
+        <div class="row g-2">
+            <div class="col-3 col-md-2 col-lg-1"><a href="./tech/mecanique.html"><div class="card card-body"><span class="emoji-box">⚙️</span><h6 class="title">Mécanique</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./tech/entretien.html"><div class="card card-body"><span class="emoji-box">🧰</span><h6 class="title">Entretien</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./tech/armurerie.html"><div class="card card-body"><span class="emoji-box">⚒️</span><h6 class="title">Armurerie</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./tech/optique.html"><div class="card card-body"><span class="emoji-box">📷</span><h6 class="title">Optique</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./weapons/munitions.html"><div class="card card-body"><span class="emoji-box">💥</span><h6 class="title">Munitions</h6></div></a></div>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="life">
+        <div class="section-label">Autonomie</div>
+        <div class="row g-2">
+            <div class="col-3 col-md-2 col-lg-1"><a href="./life/agri.html"><div class="card card-body"><span class="emoji-box">🌱</span><h6 class="title">Agriculture</h6></div></a></div>
+            <div class="col-3 col-md-2 col-lg-1"><a href="./life/eau.html"><div class="card card-body"><span class="emoji-box">💧</span><h6 class="title">Eau</h6></div></a></div>
+        </div>
+    </div>
+    
+    <div class="tab-pane fade" id="tech">
+        <div class="section-label">Ingénierie</div>
+        <div class="row g-2">
+            <div class="col-3 col-md-2 col-lg-1"><a href="./tech/it.html"><div class="card card-body"><span class="emoji-box">🖥️</span><h6 class="title">IT</h6></div></a></div>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="sci">
+        <div class="section-label">Sciences</div>
+        <div class="row g-2">
+            <div class="col-3 col-md-2 col-lg-1"><a href="./sci/med.html"><div class="card card-body"><span class="emoji-box">⚕️</span><h6 class="title">Médecine</h6></div></a></div>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.getElementById('searchInput').addEventListener('input', function() {
+        let filter = this.value.toLowerCase();
+        let cards = document.querySelectorAll('.card');
+        let tabs = document.querySelectorAll('.tab-pane');
+        let labels = document.querySelectorAll('.section-label');
+        
+        if (filter.length > 0) {
+            tabs.forEach(t => { t.classList.add('show', 'active'); });
+            labels.forEach(l => l.style.display = 'none');
+        } else {
+            tabs.forEach((t, i) => { 
+                t.classList.remove('show', 'active'); 
+                if(i === 0) t.classList.add('show', 'active');
+            });
+            labels.forEach(l => l.style.display = 'block');
+        }
+
+        cards.forEach(card => {
+            let title = card.querySelector('.title').innerText.toLowerCase();
+            let parent = card.closest('[class^="col"]');
+            if (title.includes(filter)) {
+                parent.classList.remove('d-none-search');
+            } else {
+                parent.classList.add('d-none-search');
+            }
+        });
+    });
+</script>
+</body>
+</html>

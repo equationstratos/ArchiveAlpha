@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive Alpha - Alimentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0b0b; --card-bg: #141414; --accent: #007bff; }
+        body { background-color: var(--bg); color: #e0e0e0; font-family: 'Inter', sans-serif; overflow: hidden; height: 100vh; display: flex; flex-direction: column; }
+        .header { padding: 10px 20px; border-bottom: 1px solid #222; background: #0f0f0f; }
+        .back-btn { color: #555; text-decoration: none; font-size: 0.8rem; font-weight: 700; transition: 0.2s; }
+        .back-btn:hover { color: var(--accent); }
+        .nav-pills { padding: 10px; background: #0f0f0f; border-bottom: 1px solid #222; justify-content: center; }
+        .nav-link { color: #666 !important; text-transform: uppercase; font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; padding: 8px 12px !important; border-radius: 4px !important; }
+        .nav-link.active { background-color: var(--accent) !important; color: white !important; }
+        .tab-content { flex-grow: 1; padding: 20px; overflow-y: auto; }
+        .card { background-color: var(--card-bg) !important; border: 1px solid #222 !important; transition: 0.1s; min-height: 90px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 6px; }
+        .card:hover { transform: scale(1.03); border-color: #444 !important; }
+        .title { font-size: 0.55rem; font-weight: 700; margin-top: 8px; text-transform: uppercase; color: #888; text-align: center; line-height: 1.2; }
+        .emoji-box { font-size: 1.3rem; }
+        a { text-decoration: none !important; }
+    </style>
+</head>
+<body>
+
+<div class="header d-flex justify-content-between align-items-center">
+    <a href="../index.html" class="back-btn">← AUTONOMY</a>
+    <div style="font-weight: 900; letter-spacing: 2px; font-size: 0.8rem; color: #444;">ALIMENTATION_RESOURCES</div>
+    <div style="width: 100px;"></div> 
+</div>
+
+<ul class="nav nav-pills" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="pills-eau-tab" data-bs-toggle="pill" data-bs-target="#eau" type="button" role="tab">Eau & Boissons</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-base-tab" data-bs-toggle="pill" data-bs-target="#base" type="button" role="tab">Bases & Farines</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-conserve-tab" data-bs-toggle="pill" data-bs-target="#conserve" type="button" role="tab">Conservation</button>
+    </li>
+</ul>
+
+<div class="tab-content" id="pills-tabContent">
+    
+    <div class="tab-pane fade show active" id="eau" role="tabpanel">
+        <div class="row g-2">
+            <div class="col-4 col-md-2"><a href="./filtrer_eau.html"><div class="card card-body"><span class="emoji-box">💧</span><h6 class="title">Filtrer Eau</h6></div></a></div>
+            <div class="col-4 col-md-2"><a href="./dessalinisation.html"><div class="card card-body"><span class="emoji-box">🌊</span><h6 class="title">Dessaliniser</h6></div></a></div>
+            <div class="col-4 col-md-2"><a href="./biere.html"><div class="card card-body"><span class="emoji-box">🍺</span><h6 class="title">Bière</h6></div></a></div>
+            <div class="col-4 col-md-2"><a href="./whisky.html"><div class="card card-body"><span class="emoji-box">🥃</span><h6 class="title">Whisky</h6></div></a></div>
+            <div class="col-4 col-md-2"><a href="./vodka.html"><div class="card card-body"><span class="emoji-box">🍸</span><h6 class="title">Vodka</h6></div></a></div>
+            <div class="col-4 col-md-2"><a href="./vin.html"><div class="card card-body"><span class="emoji-box">🍷</span><h6 class="title">Vin</h6></div></a></div>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="base" role="tabpanel">
+        <div class="row g-2">
+            <div class="col-4 col-md-2"><a href="./farine.html"><div class="card card-body"><span class="emoji-box">🌾</span><h6 class="title">Farine</h6></div></a></div>
+            <div class="col-4 col-md-2"><a href="./pates.html"><div class="card card-body"><span class="emoji-box">🍝</span><h6 class="title">Pâtes Art.</h6></div></a></div>
+            <div class="col-4 col-md-2"><a href="./pain.html"><div class="card card-body"><span class="emoji-box">🍞</span><h6 class="title">Pain</h6></div></a></div>
+            <div class="col-4 col-md-2"><a href="./levure.html"><div class="card card-body"><span class="emoji-box">🧫</span><h6 class="title">Levure</h6></div></a></div>
+            <div class="col-4 col-md-2"><a href="./epices.html"><div class="card card-body"><span class="emoji-box">🌶️</span><h6 class="title">Epices</h6></div></a></div>
+            <div class="col-4 col-md-2"><a href="./sel.html"><div class="card card-body"><span class="emoji-box">🧂</span><h6 class="title">Sel</h6></div></a></div>            
+            <div class="col-4 col-md-2"><a href="./poivre.html"><div class="card card-body"><span class="emoji-box">🌑</span><h6 class="title">Poivre</h6></div></a></div>       
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="conserve" role="tabpanel">
+        <div class="row g-2">
+            <div class="col-4 col-md-2"><a href="./soupe_poudre.html"><div class="card card-body"><span class="emoji-box">🍲</span><h6 class="title">Soupes/Purées</h6></div></a></div>
+            <div class="col-4 col-md-2"><a href="./deshydrateur.html"><div class="card card-body"><span class="emoji-box">☀️</span><h6 class="title">Déshydrateur</h6></div></a></div>
+            <div class="col-4 col-md-2"><a href="./conservation.html"><div class="card card-body"><span class="emoji-box">🥫</span><h6 class="title">Bien Conserver</h6></div></a></div>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
